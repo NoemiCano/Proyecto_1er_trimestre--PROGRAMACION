@@ -15,6 +15,8 @@ public class HistoriaPrincipal {
         DatosHistoria.setNombreUsuario(nombreUsuario);
         Metodos.slowPrintln("Hola, " + DatosHistoria.getNombreUsuario(), 40);
 
+        //Inicio de la aventura
+
         while(true) {
             Metodos.slowPrintln("¿Quieres iniciar la aventura?", 40);
             String decision = sc.nextLine();
@@ -38,6 +40,8 @@ public class HistoriaPrincipal {
         Metodos.slowPrintln("- Vulpix: pokemon tipo Fuego. Útil contra las sombras y la oscuridad", 40);
         Metodos.slowPrintln("- Staryu: pokemon tipo Agua. Útil para atravesar lagos y rios", 40);
         Metodos.slowPrintln("- Nidoran: pokemon tipo Veneno. Útil contra las ilusiones y reflejos", 40);
+
+        //Eleccion de pokemon
 
         String pokemon;
         String ataqueUno;
@@ -81,12 +85,12 @@ public class HistoriaPrincipal {
             } else {
                 Metodos.slowPrintln("Por favor, escribe el nombre del pokemon que deseas seleccionar: Vulpix, Staryu o Nidoran.", 40);
             }
-
-
-
-
-
         }
+
+        //Eleccion de inventario inicial
+
+
+
 
 
 

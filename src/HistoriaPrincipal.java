@@ -43,14 +43,10 @@ public class HistoriaPrincipal {
 
             Metodos.slowPrintln("¿A quien quieres elegir?", 40);
             String EleccionPokemon = sc.nextLine();
-            String pokemon;
             if (EleccionPokemon.equalsIgnoreCase("Vulpix")) {
 
-                DatosPokemon.EleccionVulpix();
-                pokemon = DatosPokemon.EleccionVulpix();
 
                 Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
-                Metodos.slowPrintln("Su vida es de, " + DatosPokemon.vidaVulpix() + " y sus ataques son: ", 40);
                 break;
 
             } else if (EleccionPokemon.equalsIgnoreCase("Staryu")) {
@@ -65,8 +61,6 @@ public class HistoriaPrincipal {
 
 
 
-
-        }
 
 
 

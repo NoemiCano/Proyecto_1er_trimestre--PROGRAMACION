@@ -15,6 +15,8 @@ public class HistoriaPrincipal {
         DatosHistoria.setNombreUsuario(nombreUsuario);
         Metodos.slowPrintln("Hola, " + DatosHistoria.getNombreUsuario(), 40);
 
+        //Inicio de la aventura
+
         while(true) {
             Metodos.slowPrintln("¿Quieres iniciar la aventura?", 40);
             String decision = sc.nextLine();
@@ -39,25 +41,53 @@ public class HistoriaPrincipal {
         Metodos.slowPrintln("- Staryu: pokemon tipo Agua. Útil para atravesar lagos y rios", 40);
         Metodos.slowPrintln("- Nidoran: pokemon tipo Veneno. Útil contra las ilusiones y reflejos", 40);
 
+        //Eleccion de pokemon
+
+        String pokemon;
+        String ataqueUno;
+        String ataqueDos;
+
         while(true) {
 
             Metodos.slowPrintln("¿A quien quieres elegir?", 40);
             String EleccionPokemon = sc.nextLine();
+
             if (EleccionPokemon.equalsIgnoreCase("Vulpix")) {
 
+                pokemon = "Vulpix";
+                ataqueUno = "'Llamarada' tiene un rango de dato de 0 a 60";
+                ataqueDos = "'Placaje'  tiene un rango de dato de 0 a 40";
 
                 Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
+                Metodos.slowPrintln("Su vida es de, " + DatosPokemon.vidaVulpix() + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 break;
 
             } else if (EleccionPokemon.equalsIgnoreCase("Staryu")) {
 
+                pokemon = "Staryu";
+                ataqueUno = "'Hidropulso' tiene un rango de dato de 0 a 60";
+                ataqueDos = "'Placaje' tiene un rango de dato de 0 a 40";
+
+                Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
+                Metodos.slowPrintln("Su vida es de, " + DatosPokemon.vidaStaryu() + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
+                break;
 
             } else if (EleccionPokemon.equalsIgnoreCase("Nidoran")) {
+
+                pokemon = "Nidoran";
+                ataqueUno = "'Onda toxica' tiene un rango de dato de 0 a 60";
+                ataqueDos = "'Placaje' tiene un rango de dato de 0 a 40";
+
+                Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
+                Metodos.slowPrintln("Su vida es de, " + DatosPokemon.vidaNidoran() + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
+                break;
 
             } else {
                 Metodos.slowPrintln("Por favor, escribe el nombre del pokemon que deseas seleccionar: Vulpix, Staryu o Nidoran.", 40);
             }
+        }
 
+        //Eleccion de inventario inicial
 
 
 

@@ -2,17 +2,27 @@ public class DatosPokemon {
 
     //Vulpix
 
-    public static String EleccionVulpix() {
-        String nombrePokemon = "Vulpix";
-        return nombrePokemon;
-    }
-
     public static int vidaVulpix() {
         int totalVida = 100;
         return totalVida;
     }
 
+    public static int vidaStaryu() {
+        int totalVida = 110;
+        return totalVida;
+    }
 
-    String ataque1 = "ataque1pendienteJuanda";
-    String ataque2 = "ataque2pendienteJuanda";
+    public static int vidaNidoran() {
+        int totalVida = 120;
+        return totalVida;
+    }
+
+    public static int vidaDarkrai() {
+        int totalVida = 180;
+        return totalVida;
+    }
+
+
+
+
 }

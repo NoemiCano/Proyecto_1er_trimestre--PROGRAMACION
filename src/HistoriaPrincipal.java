@@ -51,8 +51,8 @@ public class HistoriaPrincipal {
             if (EleccionPokemon.equalsIgnoreCase("Vulpix")) {
 
                 pokemon = "Vulpix";
-                ataqueUno = "Llamarada";
-                ataqueDos = "Placaje";
+                ataqueUno = "'Llamarada' tiene un rango de dato de 0 a 60";
+                ataqueDos = "'Placaje'  tiene un rango de dato de 0 a 40";
 
                 Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de, " + DatosPokemon.vidaVulpix() + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
@@ -61,8 +61,8 @@ public class HistoriaPrincipal {
             } else if (EleccionPokemon.equalsIgnoreCase("Staryu")) {
 
                 pokemon = "Staryu";
-                ataqueUno = "Hidropulso";
-                ataqueDos = "Placaje";
+                ataqueUno = "'Hidropulso' tiene un rango de dato de 0 a 60";
+                ataqueDos = "'Placaje' tiene un rango de dato de 0 a 40";
 
                 Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de, " + DatosPokemon.vidaStaryu() + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
@@ -71,8 +71,8 @@ public class HistoriaPrincipal {
             } else if (EleccionPokemon.equalsIgnoreCase("Nidoran")) {
 
                 pokemon = "Nidoran";
-                ataqueUno = "Onda toxica";
-                ataqueDos = "Placaje";
+                ataqueUno = "'Onda toxica' tiene un rango de dato de 0 a 60";
+                ataqueDos = "'Placaje' tiene un rango de dato de 0 a 40";
 
                 Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de, " + DatosPokemon.vidaNidoran() + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
@@ -81,6 +81,7 @@ public class HistoriaPrincipal {
             } else {
                 Metodos.slowPrintln("Por favor, escribe el nombre del pokemon que deseas seleccionar: Vulpix, Staryu o Nidoran.", 40);
             }
+
 
 
 

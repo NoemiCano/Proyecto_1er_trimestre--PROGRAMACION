@@ -19,11 +19,10 @@ public class SelectRoutes {
         System.out.println("El segundo camino parece (...)");
         System.out.println("El tercer camino parece (...)\n");
 
+        choiceRoutes = errores.comprobar(sc, "¿Por qué camino decides continuar?",1, 3);
         System.out.println(Metodos.red + "1. Camino de las Sombras");
         System.out.println(Metodos.blue + "2. Camino del Lago Ilusorio");
         System.out.println(Metodos.purple + "3. Camino de la Luz Distorsionada" + Metodos.reset);
-
-        choiceRoutes = reintentoSinCrashear.comprobar(sc, "¿Por qué camino decides continuar?",1, 3);
 
         switch (choiceRoutes) {
             case 1-> WaterRoute.waterRoute();

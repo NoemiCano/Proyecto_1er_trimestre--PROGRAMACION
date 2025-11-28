@@ -22,23 +22,17 @@ public class DatosHistoria {
     };
 
 
-    //Guardamos los datos de la vida para poder usarla en otras funciones
+    //Guardamos los datos de la vida inicial para poder usarla en otras funciones
 
-    public static int vidaTotal(){
+    public static int vidaInicial;
 
-        int vidaInicio = 0;
+    public static void setvidaInicial(int vidaInicio) { vidaInicial = vidaInicio; }
 
-        if(Pokemon.equals("Vulpix")){
+    public static int getvidaInicial() {
+        return vidaInicial;
+    };
 
-            vidaInicio = DatosPokemon.vidaVulpix();
-
-        }else if(Pokemon.equals("Nidoran")){
-
-            vidaInicio = DatosPokemon.vidaNidoran();
-
-        }
-        return vidaInicio;
-    }
+    //Aquí es donde se debería de ir actualizando la vida actual del pokemon
 
     public static int vidaActual;
 

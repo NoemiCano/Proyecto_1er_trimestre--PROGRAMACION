@@ -60,6 +60,7 @@ public class HistoriaPrincipal {
 
                 Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de, " + DatosPokemon.vidaVulpix() + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
+                DatosHistoria.setPokemon(pokemon);
                 break;
 
             } else if (EleccionPokemon.equalsIgnoreCase("Staryu")) {
@@ -70,6 +71,7 @@ public class HistoriaPrincipal {
 
                 Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de, " + DatosPokemon.vidaStaryu() + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
+                DatosHistoria.setPokemon(pokemon);
                 break;
 
             } else if (EleccionPokemon.equalsIgnoreCase("Nidoran")) {
@@ -80,14 +82,23 @@ public class HistoriaPrincipal {
 
                 Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de, " + DatosPokemon.vidaNidoran() + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
+                DatosHistoria.setPokemon(pokemon);
                 break;
 
             } else {
                 Metodos.slowPrintln("Por favor, escribe el nombre del pokemon que deseas seleccionar: Vulpix, Staryu o Nidoran.", 40);
             }
-        }
 
-        //Eleccion de inventario inicial
+
+
+        }
+        System.out.println("Has elegido: " + DatosHistoria.getPokemon());
+
+        System.out.println("Quieres hacer un ataque? ");
+        int ataque = sc.nextInt();
+        if(ataque == 1) {
+            System.out.println(Metodos.ataque1());
+        }
 
 
 

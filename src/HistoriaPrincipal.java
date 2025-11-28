@@ -63,7 +63,7 @@ public class HistoriaPrincipal {
                 Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de, " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
-                DatosHistoria.setvidaInicial(vidaInicio);
+                DatosHistoria.setVidaInicial(vidaInicio);
                 break;
 
             } else if (EleccionPokemon.equalsIgnoreCase("Staryu")) {
@@ -76,7 +76,7 @@ public class HistoriaPrincipal {
                 Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de, " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
-                DatosHistoria.setvidaInicial(vidaInicio);
+                DatosHistoria.setVidaInicial(vidaInicio);
                 break;
 
             } else if (EleccionPokemon.equalsIgnoreCase("Nidoran")) {
@@ -89,7 +89,7 @@ public class HistoriaPrincipal {
                 Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de, " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
-                DatosHistoria.setvidaInicial(vidaInicio);
+                DatosHistoria.setVidaInicial(vidaInicio);
                 break;
 
             } else {

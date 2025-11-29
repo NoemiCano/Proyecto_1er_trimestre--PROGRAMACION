@@ -22,7 +22,7 @@ public class HistoriaPrincipal {
             String decision = sc.nextLine();
             if (decision.equalsIgnoreCase("si")) {
                 Metodos.slowPrintln("Despiertas en tu habitación sin recuerdos claros, aunque todo te resulta familiar... sientes que algo no va bien...", 40);
-                Metodos.slowPrintln("Recuerdas que hoy debes ir con el profesor Oak a elegir tu primer pokemon. Asi que te levantas de la cama y vas hacia el centro pokemon de tu ciudad", 40);
+                Metodos.slowPrintln("Pero recuerdas que hoy debes ir con el profesor Oak a elegir tu primer pokemon. Asi que te levantas de la cama y vas hacia el centro pokemon de tu ciudad", 40);
                 break;
             }
 
@@ -34,12 +34,12 @@ public class HistoriaPrincipal {
             }
         }
 
-        System.out.println("------------------\n");
+        Metodos.divider();
 
-        Metodos.slowPrintln("El profesor te da a elegir entre los siguientes tres Pokemons: \n", 40);
-        Metodos.slowPrintln("- Vulpix: pokemon tipo Fuego. Útil contra las sombras y la oscuridad", 40);
-        Metodos.slowPrintln("- Staryu: pokemon tipo Agua. Útil para atravesar lagos y rios", 40);
-        Metodos.slowPrintln("- Nidoran: pokemon tipo Veneno. Útil contra las ilusiones y reflejos", 40);
+        Metodos.slowPrintln("El profesor te da a elegir entre los siguientes tres Pokemons: ", 40);
+        Metodos.slowPrintln( Metodos.red + "- Vulpix: pokemon tipo Fuego. Útil contra las sombras y la oscuridad", 40);
+        Metodos.slowPrintln(Metodos.blue + "- Staryu: pokemon tipo Agua. Útil para atravesar lagos y rios", 40);
+        Metodos.slowPrintln(Metodos.purple + "- Nidoran: pokemon tipo Veneno. Útil contra las ilusiones y reflejos" + Metodos.reset, 40);
 
         //Eleccion de pokemon
 
@@ -56,12 +56,12 @@ public class HistoriaPrincipal {
             if (EleccionPokemon.equalsIgnoreCase("Vulpix")) {
 
                 pokemon = "Vulpix";
-                ataqueUno = "'Llamarada' tiene un rango de dato de 0 a 60";
-                ataqueDos = "'Placaje'  tiene un rango de dato de 0 a 40";
+                ataqueUno = "'Llamarada' que tiene un rango de dato de 0 a 60";
+                ataqueDos = "'Placaje' que tiene un rango de dato de 0 a 40";
                 vidaInicio = DatosPokemon.vidaVulpix();
 
-                Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
-                Metodos.slowPrintln("Su vida es de, " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
+                Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
+                Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
                 DatosHistoria.setVidaInicial(vidaInicio);
                 break;
@@ -69,12 +69,12 @@ public class HistoriaPrincipal {
             } else if (EleccionPokemon.equalsIgnoreCase("Staryu")) {
 
                 pokemon = "Staryu";
-                ataqueUno = "'Hidropulso' tiene un rango de dato de 0 a 60";
-                ataqueDos = "'Placaje' tiene un rango de dato de 0 a 40";
+                ataqueUno = "'Hidropulso' que tiene un rango de dato de 0 a 60";
+                ataqueDos = "'Placaje' que tiene un rango de dato de 0 a 40";
                 vidaInicio = DatosPokemon.vidaStaryu();
 
-                Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
-                Metodos.slowPrintln("Su vida es de, " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
+                Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
+                Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
                 DatosHistoria.setVidaInicial(vidaInicio);
                 break;
@@ -82,12 +82,12 @@ public class HistoriaPrincipal {
             } else if (EleccionPokemon.equalsIgnoreCase("Nidoran")) {
 
                 pokemon = "Nidoran";
-                ataqueUno = "'Onda toxica' tiene un rango de dato de 0 a 60";
-                ataqueDos = "'Placaje' tiene un rango de dato de 0 a 40";
+                ataqueUno = "'Onda toxica' que tiene un rango de dato de 0 a 60";
+                ataqueDos = "'Placaje' que tiene un rango de dato de 0 a 40";
                 vidaInicio = DatosPokemon.vidaNidoran();
 
-                Metodos.slowPrintln("Has elegido a, " + pokemon + ". \nAhora te acompañará durante tu aventura.", 40);
-                Metodos.slowPrintln("Su vida es de, " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
+                Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
+                Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
                 DatosHistoria.setVidaInicial(vidaInicio);
                 break;
@@ -97,9 +97,52 @@ public class HistoriaPrincipal {
             }
         }
 
-        //Eleccion de inventario
+        Metodos.slowPrintln("\nEl profesor Oak te dice que vayas a la enfermería del centro pokemon antes de irte.", 40);
 
+        //Elección de inventario
 
+        Metodos.divider();
+
+        Metodos.slowPrintln("Cuando llegas, la enfermera Joy te da a elegir uno de los siguientes objetos que podrán serte de utilidad durante tu viaje", 40);
+
+        Metodos.slowPrintln( Metodos.yellow + "1. Linterna (amplifica la visión en lugares oscuros)", 40);
+        Metodos.slowPrintln(Metodos.red + "2. Poción de vida (ayudará a tu pokemon a recuperar algo de vida)", 40);
+        Metodos.slowPrintln(Metodos.green+ "3. Revivir (revive a tu pokemon en el caso de quedarse sin vida)" + Metodos.reset, 40);
+
+        while (true) {
+
+            String objetoInventario;
+
+            objetoInventario = sc.nextLine();
+
+            if (objetoInventario.equalsIgnoreCase("1")) {
+
+                objetoInventario = "Linterna";
+
+                Metodos.slowPrintln("Has elegido la linterna", 40);
+                DatosHistoria.setObjetoInicial(objetoInventario);
+                break;
+
+            } else if (objetoInventario.equalsIgnoreCase("2")) {
+
+                objetoInventario = "Poción de vida";
+
+                Metodos.slowPrintln("Has elegido la poción de vida", 40);
+                DatosHistoria.setObjetoInicial(objetoInventario);
+                break;
+
+            } else if (objetoInventario.equalsIgnoreCase("3")) {
+
+                objetoInventario = "Revivir";
+
+                Metodos.slowPrintln("Has elegido el revivir", 40);
+                DatosHistoria.setObjetoInicial(objetoInventario);
+                break;
+
+            } else {
+                Metodos.slowPrintln("Por favor, elige un número del 1 al 3", 40);
+            }
+        }
 
 
         System.out.println("Has elegido: " + DatosHistoria.getPokemon());

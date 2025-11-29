@@ -21,6 +21,16 @@ public class DatosHistoria {
         return Pokemon;
     }
 
+    //Guardamos el objeto inicial
+
+    public static String objetoInicial;
+
+    public static void setObjetoInicial(String objetoInventario) { objetoInicial = objetoInventario; }
+
+    public static String ObjetoInicial() {
+        return objetoInicial;
+    }
+
 
     //Guardamos los datos de la vida inicial para poder usarla en otras funciones
 

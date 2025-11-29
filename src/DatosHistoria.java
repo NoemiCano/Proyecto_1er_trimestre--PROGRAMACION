@@ -11,6 +11,7 @@ public class DatosHistoria {
         return nombreUsuario;
     }
 
+
     //Guardamos la eleccion del pokemon
 
     public static String Pokemon;
@@ -20,6 +21,7 @@ public class DatosHistoria {
     public static String getPokemon() {
         return Pokemon;
     }
+
 
     //Guardamos el objeto inicial
 

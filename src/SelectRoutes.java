@@ -13,7 +13,7 @@ public class SelectRoutes {
         int choiceRoutes;
 
         Metodos.divider();
-        System.out.println("Sales de (el laboratorio (??? ns qué es) decidido a comenzar tu aventura con tu nuevo compañero, tras avanzar un trato encuentras una bifurcación de tres caminos.");
+        System.out.println("Sales del centro pokemon. \nTe has decidido a comenzar tu aventura con tu nuevo compañero, tras avanzar un trato encuentras una bifurcación de tres caminos.");
 
         System.out.println("El primer camino parece (...)");
         System.out.println("El segundo camino parece (...)");

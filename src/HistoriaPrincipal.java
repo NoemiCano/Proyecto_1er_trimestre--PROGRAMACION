@@ -144,6 +144,14 @@ public class HistoriaPrincipal {
             }
         }
 
+        // Elección de ruta
+
+        SelectRoutes.selectRoutes();
+
+
+
+        //Pruebas de Juanda para la pelea
+
 
         System.out.println("Has elegido: " + DatosHistoria.getPokemon());
 

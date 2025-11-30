@@ -37,7 +37,7 @@ public class WaterRoute {
         choiceWater = errores.comprobar(sc, "¿Qué decides?",1, 3);
         System.out.println(Metodos.purple + "1. Reflejo");
         System.out.println(Metodos.green + "2.Sombras");
-        System.out.println(Metodos.blue + "3.Cruzar nadando el lago" + Metodos.reset);
+        System.out.println(Metodos.blue + "3.Cruzar nadando el lago \n" + Metodos.reset);
 
         switch (choiceWater) {
             case 1-> reflejos();
@@ -48,8 +48,9 @@ public class WaterRoute {
 
     static void reflejos(){
 
-        System.out.println("a \n a \n a \n");
+        System.out.println("Te encuentras un poco mareado");
 
+        waterRouteReturn();
 
     }
 
@@ -70,7 +71,7 @@ public class WaterRoute {
 
         switch (choiceShadows) {
             case 1-> reflejos();
-            case 2 -> sombras();
+            case 2 -> waterRouteReturn();
             case 3 -> nadar();
         }
 
@@ -79,9 +80,11 @@ public class WaterRoute {
 
     static void nadar(){
 
-        System.out.println("a \n a \n a \n");
+        System.out.println("Decides tirarte al lago y ----");
 
+        if(DatosHistoria.pokemon.equals("Vulpix")){
 
+        }
     }
 
 }

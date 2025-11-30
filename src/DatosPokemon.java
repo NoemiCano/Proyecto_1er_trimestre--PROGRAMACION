@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class DatosPokemon {
 
-    Random random = new Random();
+    static Random random = new Random();
 
     //Vulpix
 
@@ -26,32 +26,32 @@ public class DatosPokemon {
         return totalVida;
     }
 
-    public static int ataque1Vulpix(Random random){
+    public static int ataque1Vulpix(){
         int damage = random.nextInt(0, 61);
         return damage;
     }
 
-    public static int ataque2Vulpix(Random random){
+    public static int ataque2Vulpix(){
         int damage = random.nextInt(0, 41);
         return damage;
     }
 
-    public static int ataque1Staryu(Random random){
+    public static int ataque1Staryu(){
         int damage = random.nextInt(0, 61);
         return damage;
     }
 
-    public static int ataque2Staryu(Random random){
+    public static int ataque2Staryu(){
         int damage = random.nextInt(0, 41);
         return damage;
     }
 
-    public static int ataque1Nidoran(Random random){
+    public static int ataque1Nidoran(){
         int damage = random.nextInt(0, 61);
         return damage;
     }
 
-    public static int ataque2Nidoran(Random random){
+    public static int ataque2Nidoran(){
         int damage = random.nextInt(0, 41);
         return damage;
     }

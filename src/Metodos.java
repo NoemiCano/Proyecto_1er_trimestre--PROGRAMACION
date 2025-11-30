@@ -50,4 +50,44 @@ public class Metodos {
 
     }
 
+    public static int ataque1() {
+        int damage = 0;
+
+        if (DatosHistoria.getPokemon().equalsIgnoreCase("Vulpix")) {
+            damage =  DatosPokemon.ataque1Vulpix();
+        } else if (DatosHistoria.getPokemon().equalsIgnoreCase("Nidoran")) {
+            damage =  DatosPokemon.ataque1Nidoran();
+        }else if (DatosHistoria.getPokemon().equalsIgnoreCase("Staryu")) {
+            damage = DatosPokemon.ataque1Staryu();
+        }
+    return damage;
+    }
+
+    public static int ataque2() {
+        int damage = 0;
+
+        if (DatosHistoria.getPokemon().equalsIgnoreCase("Vulpix")) {
+            damage =  DatosPokemon.ataque2Vulpix();
+        } else if (DatosHistoria.getPokemon().equalsIgnoreCase("Nidoran")) {
+            damage =  DatosPokemon.ataque2Nidoran();
+        }else if (DatosHistoria.getPokemon().equalsIgnoreCase("Staryu")) {
+            damage = DatosPokemon.ataque2Staryu();
+        }
+        return damage;
+    }
+
+
+
+
+
+
+    int vidaStaryu = DatosPokemon.vidaStaryu();
+    int ataque1Staryu = DatosPokemon.ataque1Staryu();
+    int ataque2Staryu = DatosPokemon.ataque2Staryu();
+
+    int vidaNidoran =  DatosPokemon.vidaNidoran();
+    int ataque1Nidoran = DatosPokemon.ataque1Nidoran();
+    int ataque2Nidoran = DatosPokemon.ataque2Nidoran();
+
+
 }

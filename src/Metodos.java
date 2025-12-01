@@ -1,6 +1,9 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Metodos {
+
+    static Random random = new Random();
 
     static String reset = "\u001B[0m";
     static String black = "\u001B[30m";
@@ -53,45 +56,46 @@ public class Metodos {
     public static int ataque1() {
         int damage = 0;
 
-        if (DatosHistoria.getPokemon().equalsIgnoreCase("Vulpix")) {
-            damage =  DatosPokemon.ataque1Vulpix();
-        } else if (DatosHistoria.getPokemon().equalsIgnoreCase("Nidoran")) {
-            damage =  DatosPokemon.ataque1Nidoran();
-        }else if (DatosHistoria.getPokemon().equalsIgnoreCase("Staryu")) {
-            damage = DatosPokemon.ataque1Staryu();
-        }
-    return damage;
+        if ((DatosHistoria.Pokemon.equalsIgnoreCase("Vulpix")) || (DatosHistoria.Pokemon.equalsIgnoreCase("Nidoran")) || (DatosHistoria.Pokemon.equalsIgnoreCase("Staryu"))) {
+            damage = random.nextInt(0, 61);
+        } else if ((DatosHistoria.Pokemon.equalsIgnoreCase("Ninetales")) || (DatosHistoria.Pokemon.equalsIgnoreCase("Starmie")) || (DatosHistoria.Pokemon.equalsIgnoreCase("Nidoking"))) {
+            damage = random.nextInt(20, 81);
+            }
+        return damage;
     }
+
 
     public static int ataque2() {
         int damage = 0;
 
-        if (DatosHistoria.getPokemon().equalsIgnoreCase("Vulpix")) {
-            damage =  DatosPokemon.ataque2Vulpix();
-        } else if (DatosHistoria.getPokemon().equalsIgnoreCase("Nidoran")) {
-            damage =  DatosPokemon.ataque2Nidoran();
-        }else if (DatosHistoria.getPokemon().equalsIgnoreCase("Staryu")) {
-            damage = DatosPokemon.ataque2Staryu();
+        if ((DatosHistoria.Pokemon.equalsIgnoreCase("Vulpix")) || (DatosHistoria.Pokemon.equalsIgnoreCase("Nidoran")) || (DatosHistoria.Pokemon.equalsIgnoreCase("Staryu"))) {
+            damage = random.nextInt(0, 41);
+        } else if ((DatosHistoria.Pokemon.equalsIgnoreCase("Ninetales")) || (DatosHistoria.Pokemon.equalsIgnoreCase("Starmie")) || (DatosHistoria.Pokemon.equalsIgnoreCase("Nidoking"))) {
+            damage = random.nextInt(20, 61);
         }
         return damage;
     }
 
-    int vidaStaryu = DatosPokemon.vidaStaryu();
-    int ataque1Staryu = DatosPokemon.ataque1Staryu();
-    int ataque2Staryu = DatosPokemon.ataque2Staryu();
+    public static int vidaInicialPokemon() {
+        int totalVida = 0;
 
-    int vidaNidoran =  DatosPokemon.vidaNidoran();
-    int ataque1Nidoran = DatosPokemon.ataque1Nidoran();
-    int ataque2Nidoran = DatosPokemon.ataque2Nidoran();
+        if ((DatosHistoria.Pokemon.equalsIgnoreCase("Vulpix"))) {
+            totalVida = 100;
+        } else if ((DatosHistoria.Pokemon.equalsIgnoreCase("Nidoran"))) {
+            totalVida = 120;
+        } else if ((DatosHistoria.Pokemon.equalsIgnoreCase("Staryu"))) {
+            totalVida = 110;
+        } else if ((DatosHistoria.Pokemon.equalsIgnoreCase("Darkrai"))) {
+            totalVida = 180;
+        } else if ((DatosHistoria.Pokemon.equalsIgnoreCase("Ninetales"))) {
+            totalVida = 160;
+        } else if ((DatosHistoria.Pokemon.equalsIgnoreCase("Starmie"))) {
+            totalVida = 170;
+        } else if ((DatosHistoria.Pokemon.equalsIgnoreCase("Nidoking"))) {
+            totalVida = 180;
+        }
 
-
-    //Evolución de los pokemon
-
-    public static String evolucionPokemon(){
-
+        return totalVida;
     }
-
-
-
 
 }

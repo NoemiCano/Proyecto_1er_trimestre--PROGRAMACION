@@ -98,4 +98,14 @@ public class Metodos {
         return totalVida;
     }
 
+    public static String[] arrayInventario(){
+        String[] arrayInventario = new String[4];
+
+        arrayInventario[0] = DatosHistoria.objetoInicial;
+
+        return arrayInventario;
+    }
+
+
+
 }

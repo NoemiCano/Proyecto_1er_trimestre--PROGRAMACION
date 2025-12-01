@@ -76,7 +76,6 @@ public class Metodos {
         return damage;
     }
 
-
     int vidaStaryu = DatosPokemon.vidaStaryu();
     int ataque1Staryu = DatosPokemon.ataque1Staryu();
     int ataque2Staryu = DatosPokemon.ataque2Staryu();

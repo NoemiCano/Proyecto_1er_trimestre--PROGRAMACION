@@ -26,9 +26,9 @@ public class SelectRoutes {
         choiceRoutes = reintentoSinCrashear.comprobar(sc, "¿Por qué camino decides continuar?",1, 3);
 
         switch (choiceRoutes) {
-            case 1-> WaterRoute.waterRoute();
+            case 1-> FireRoute.inicioFireRoute();
             case 2 -> WaterRoute.waterRoute();
-            case 3 -> Metodos.divider();
+            case 3 -> PoisonRoute.inicioPoisonRoute();
             default -> Metodos.divider();
         }
     }

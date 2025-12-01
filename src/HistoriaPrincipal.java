@@ -56,8 +56,8 @@ public class HistoriaPrincipal {
             if (EleccionPokemon.equalsIgnoreCase("Vulpix")) {
 
                 pokemon = "Vulpix";
-                ataqueUno = "'Llamarada' que tiene un rango de dato de 0 a 60";
-                ataqueDos = "'Placaje' que tiene un rango de dato de 0 a 40";
+                ataqueUno = "'Llamarada' que tiene un rango de daño de 0 a 60";
+                ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
                 vidaInicio = DatosPokemon.vidaVulpix();
 
                 Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
@@ -69,8 +69,8 @@ public class HistoriaPrincipal {
             } else if (EleccionPokemon.equalsIgnoreCase("Staryu")) {
 
                 pokemon = "Staryu";
-                ataqueUno = "'Hidropulso' que tiene un rango de dato de 0 a 60";
-                ataqueDos = "'Placaje' que tiene un rango de dato de 0 a 40";
+                ataqueUno = "'Hidropulso' que tiene un rango de daño de 0 a 60";
+                ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
                 vidaInicio = DatosPokemon.vidaStaryu();
 
                 Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
@@ -82,8 +82,8 @@ public class HistoriaPrincipal {
             } else if (EleccionPokemon.equalsIgnoreCase("Nidoran")) {
 
                 pokemon = "Nidoran";
-                ataqueUno = "'Onda toxica' que tiene un rango de dato de 0 a 60";
-                ataqueDos = "'Placaje' que tiene un rango de dato de 0 a 40";
+                ataqueUno = "'Onda toxica' que tiene un rango de daño de 0 a 60";
+                ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
                 vidaInicio = DatosPokemon.vidaNidoran();
 
                 Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);

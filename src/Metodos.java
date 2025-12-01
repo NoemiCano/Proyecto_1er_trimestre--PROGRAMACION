@@ -77,10 +77,6 @@ public class Metodos {
     }
 
 
-
-
-
-
     int vidaStaryu = DatosPokemon.vidaStaryu();
     int ataque1Staryu = DatosPokemon.ataque1Staryu();
     int ataque2Staryu = DatosPokemon.ataque2Staryu();
@@ -88,6 +84,15 @@ public class Metodos {
     int vidaNidoran =  DatosPokemon.vidaNidoran();
     int ataque1Nidoran = DatosPokemon.ataque1Nidoran();
     int ataque2Nidoran = DatosPokemon.ataque2Nidoran();
+
+
+    //Evolución de los pokemon
+
+    public static String evolucionPokemon(){
+
+    }
+
+
 
 
 }

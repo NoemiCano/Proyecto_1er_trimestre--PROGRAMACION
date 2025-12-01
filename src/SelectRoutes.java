@@ -26,8 +26,10 @@ public class SelectRoutes {
 
         switch (choiceRoutes) {
             case 1-> RutaFuego.opciones();
+            case 1-> FireRoute.inicioFireRoute();
             case 2 -> WaterRoute.waterRoute();
             case 3 -> WaterRoute.waterRoute(); //RutaVeneno.main();
+            case 3 -> PoisonRoute.inicioPoisonRoute();
             default -> Metodos.divider();
         }
     }

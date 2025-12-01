@@ -1,74 +1,35 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class RutaVeneno {
+public class PoisonRoute {
+
     static String nombrePokemon = "";
 
     static int vidaSeleccionada = 0;
 
     static int vidaPokemon = 0;
 
+    static void inicioPoisonRoute() {
+        main(null);
+    }
+
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         int vidas = 3;
 
-        System.out.println("Elija un Pokémon para tu aventura:");
-        System.out.println("1: \u001B[31mVulpix\u001B[0m");
-        System.out.println("2: \u001B[34mStaryu\u001B[0m");
-        System.out.println("3: \u001B[35mNidoran\u001B[0m");
-
-        seleccionarPokemon();
-
         System.out.println();
-        mostrarLento("BIENVENIDO AL CAMINO DE LUZ DISTORSIONADA", 30);
+        Metodos.slowPrintln("BIENVENIDO AL CAMINO DE LUZ DISTORSIONADA", 30);
         System.out.println();
-        mostrarLento("Te encuentras en un bosque de espejos engañosos, tienes que resolver un ahorcado para avanzar.", 20);
-        mostrarLento("Cada vez que te equivocas en una letra la vida de tu pokemon disminuye, y si muere tu pokemon comienzas de 0 el ahorcado.", 20);
-        mostrarLento("Tienes " + vidas + " vidas. Si te quedas sin vidas pierdes.", 20);
+        Metodos.slowPrintln("Te encuentras en un bosque de espejos engañosos, tienes que resolver un ahorcado para avanzar.", 20);
+        Metodos.slowPrintln("Cada vez que te equivocas en una letra la vida de tu pokemon disminuye, y si muere tu pokemon comienzas de 0 el ahorcado.", 20);
+        Metodos.slowPrintln("Tienes " + vidas + " vidas. Si te quedas sin vidas pierdes.", 20);
         System.out.println();
-        mostrarLento("QUE COMIENCE EL JUEGO", 20);
+        Metodos.slowPrintln("QUE COMIENCE EL JUEGO", 20);
 
         ahorcado(nombrePokemon, vidas, vidaPokemon);
     }
 
-
-    static int seleccionarPokemon() {
-        Scanner sc = new Scanner(System.in);
-
-        while (true) {
-            System.out.print("Opción: ");
-            String input = sc.next();
-            if (input.length() == 1 && Character.isDigit(input.charAt(0))) {
-                int numero = Character.getNumericValue(input.charAt(0));
-
-                switch (numero) {
-                    case 1:
-                        nombrePokemon = "Vulpix";
-                        System.out.println("FELICIDADES, HAS OBTENIDO A VULPIX");
-                        vidaPokemon = obtenerVida(nombrePokemon);
-                        return vidaPokemon;
-                    case 2:
-                        nombrePokemon = "Staryu";
-                        System.out.println("FELICIDADES, HAS OBTENIDO A STARYU");
-                        vidaPokemon = obtenerVida(nombrePokemon);
-                        return vidaPokemon;
-
-                    case 3:
-                        nombrePokemon = "Nidoran";
-                        System.out.println("FELICIDADES, HAS OBTENIDO A NIDORAN");
-                        vidaPokemon = obtenerVida(nombrePokemon);
-                        return vidaPokemon;
-                    default:
-                        System.out.println("Error: debes introducir 1, 2 o 3");
-                }
-
-            } else {
-                System.out.println("Error: debes introducir un número válido.");
-            }
-        }
-    }
-
-    static void ahorcado(String pokemon, int vidas, int vidaPokemon) {
+    static void ahorcado(String pokemon, int vidas,  int vidaPokemon) {
         Scanner leer = new Scanner(System.in);
         boolean adivinado = false;
         Random aleatorio = new Random();
@@ -84,14 +45,14 @@ public class RutaVeneno {
 
         char[] palabraOculta = new char[palabra.length()];
 
-        mostrarLento("ADIVINA LA PALABRA", 30);
+        Metodos.slowPrintln("ADIVINA LA PALABRA", 30);
 
         for (int i = 0; i < palabraOculta.length; i++) {
             palabraOculta[i] = '_';
         }
 
         if (pokemon.equalsIgnoreCase("Nidoran")) {
-            mostrarLento("Al ser esta la ruta para nidoran tendras una ayuda de poder ver el 25% de las letras de la palabra", 20);
+            Metodos.slowPrintln("Al ser esta la ruta para nidoran tendras una ayuda de poder ver el 25% de las letras de la palabra", 20);
             ayudaLetras(palabra, palabraOculta, 0.25);
         }
 
@@ -247,70 +208,11 @@ public class RutaVeneno {
         }
     }
 
-    static int obtenerVida(String pokemon) {
-        switch (pokemon) {
-            case "Vulpix":
-                mostrarAtaques(pokemon);
-                return 100;
-            case "Staryu":
-                mostrarAtaques(pokemon);
-                return 110;
-            case "Nidoran":
-                mostrarAtaques(pokemon);
-                return 120;
-            default:
-                System.out.println("Pokémon inesistente.");
-                return 0;
-        }
-    }
-
-    static void mostrarAtaques(String pokemon) {
-        String ataqueUno = "";
-        String ataqueDos = "";
-        switch (pokemon) {
-            case "Vulpix":
-                ataqueUno = "Llamarada";
-                ataqueDos = "Placaje";
-                System.out.print("Vida de Vulpix: 100");
-                System.out.println("El primer ataque de Vulpix es: " + ataqueUno + " Hace un rango de daño de 0 a 60");
-                System.out.println("El segundo ataque de Vulpix es: " + ataqueDos + " Hace un rango de daño de 0 a 40");
-                break;
-
-            case "Staryu":
-                ataqueUno = "Hidropulso";
-                ataqueDos = "Placaje";
-                System.out.println("Vida de Staryu: 110");
-                System.out.println("El primer ataque de Staryu es: " + ataqueUno + " Hace un rango de daño de 0 a 60");
-                System.out.println("El segundo ataque de Staryu es: " + ataqueDos + " Hace un rango de daño de 0 a 40");
-                break;
-
-            case "Nidoran":
-                ataqueUno = "Onda toxica";
-                ataqueDos = "Placaje";
-                System.out.println("Vida de Nidoran: 120");
-                System.out.println("El primer ataque de Nidoran es: " + ataqueUno + " Hace un rango de daño de 0 a 60");
-                System.out.println("El segundo ataque de Nidoran es: " + ataqueDos + " Hace un rango de daño de 0 a 40");
-                break;
-        }
-    }
-
-    static void mostrarLento(String texto, int ms) {
-        for (int i = 0; i < texto.length(); i++) {
-            System.out.print(texto.charAt(i));
-            try {
-                Thread.sleep(ms);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        System.out.println();
-    }
-
     static int reinicio (int vidas, int vidaPokemon, String pokemon){
         Scanner leer = new Scanner(System.in);
         if (vidas <= 0){
             System.out.println(" ");
-            mostrarLento("\u001B[31mHAS PERIDIDO" + " NO TE QUEDAN MAS VIDAS", 20);
+            Metodos.slowPrintln("\u001B[31mHAS PERIDIDO" + " NO TE QUEDAN MAS VIDAS", 20);
             int opcion = 0;
             while (true){
                 System.out.println(" ");
@@ -340,8 +242,8 @@ public class RutaVeneno {
             System.out.println();
             vidas--;
             vidaPokemon = vidaSeleccionada;
-            mostrarLento("\u001B[31mHAS PERIDIDO" + " TU POKEMON NO TIENE VIDA", 20);
-            mostrarLento("VUELVE A INTENTARLO\u001B[0m", 20);
+            Metodos.slowPrintln("\u001B[31mHAS PERIDIDO" + " TU POKEMON NO TIENE VIDA", 20);
+            Metodos.slowPrintln("VUELVE A INTENTARLO\u001B[0m", 20);
 
             ahorcado(pokemon,vidas,vidaPokemon);
         }
@@ -351,7 +253,7 @@ public class RutaVeneno {
     static String recompensa(int vidaPokemon){
         Scanner leer = new Scanner(System.in);
         String abrir;
-        mostrarLento("Ahora podras abrir este cofre, solo tienes que escribir 'Abrir' para abrirlo: ",20);
+        Metodos.slowPrintln("Ahora podras abrir este cofre, solo tienes que escribir 'Abrir' para abrirlo: ",20);
         abrir = leer.next();
 
         while (!abrir.equalsIgnoreCase("Abrir")){

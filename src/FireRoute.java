@@ -1,67 +1,18 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class RutaFuego {
-
-    static String nombrePokemon = "";
+public class FireRoute {
 
     static int vidaSeleccionada = 0;
 
     static int seleccionado;
 
-    public static void main(String[] args) {
-
-        int vidas = 3;
-
-        System.out.println("Elija un Pokémon para tu aventura:");
-        System.out.println("1: \u001B[31mVulpix\u001B[0m");
-        System.out.println("2: \u001B[34mStaryu\u001B[0m");
-        System.out.println("3: \u001B[35mNidoran\u001B[0m");
-
-        int vidaPokemon = seleccionarPokemon();
-
-        opciones();
+    static void inicioFireRoute() {
+        main(null);
     }
 
-    static int seleccionarPokemon() {
-
-        Scanner sc = new Scanner(System.in);
-
-        while (true) {
-            System.out.print("Opción: ");
-            String input = sc.next();
-
-            if (input.length() == 1 && Character.isDigit(input.charAt(0))) {
-
-                int numero = Character.getNumericValue(input.charAt(0));
-
-                switch (numero) {
-
-                    case 1:
-                        nombrePokemon = "Vulpix";
-                        System.out.println("FELICIDADES, HAS OBTENIDO A VULPIX");
-                        vidaSeleccionada = vidaVulpix();
-                        return vidaSeleccionada;
-
-                    case 2:
-                        nombrePokemon = "Staryu";
-                        System.out.println("FELICIDADES, HAS OBTENIDO A STARYU");
-                        vidaSeleccionada = vidaStaryu();
-                        return vidaSeleccionada;
-
-                    case 3:
-                        nombrePokemon = "Nidoran";
-                        System.out.println("FELICIDADES, HAS OBTENIDO A NIDORAN");
-                        vidaSeleccionada = vidaNidoran();
-                        return vidaSeleccionada;
-
-                    default:
-                        System.out.println("Error: debes introducir 1, 2 o 3");
-                }
-            } else {
-                System.out.println("Error: debes introducir un número válido.");
-            }
-        }
+    public static void main(String[] args) {
+        opciones();
     }
 
     static void opciones() {
@@ -69,7 +20,7 @@ public class RutaFuego {
         boolean linterna = true;
         int opciones = 2;
 
-        if (nombrePokemon.equals("Vulpix")) {
+        if ("Vulpix".equals(leer.nextLine())) {
             opciones++;
         }
 

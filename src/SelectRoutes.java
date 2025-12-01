@@ -25,10 +25,8 @@ public class SelectRoutes {
         choiceRoutes = errores.comprobar(sc, "Ahora, con tu compañero a tu lado y el cruce de caminos frente a ti, debes decidir cómo continuar tu viaje.",1, 3);
 
         switch (choiceRoutes) {
-            case 1-> RutaFuego.opciones();
             case 1-> FireRoute.inicioFireRoute();
             case 2 -> WaterRoute.waterRoute();
-            case 3 -> WaterRoute.waterRoute(); //RutaVeneno.main();
             case 3 -> PoisonRoute.inicioPoisonRoute();
             default -> Metodos.divider();
         }

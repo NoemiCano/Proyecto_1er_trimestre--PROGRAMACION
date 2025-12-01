@@ -13,7 +13,7 @@ public class HistoriaPrincipal {
         Metodos.slowPrint(ascii, 20);
         String nombreUsuario = Metodos.nombreUsuario();
         DatosHistoria.setNombreUsuario(nombreUsuario);
-        Metodos.slowPrintln("Hola, " + DatosHistoria.getNombreUsuario(), 40);
+        Metodos.slowPrintln("Hola, " + DatosHistoria.nombreUsuario, 40);
 
         //Inicio de la aventura
 
@@ -52,13 +52,14 @@ public class HistoriaPrincipal {
 
             Metodos.slowPrintln("¿A quien quieres elegir?", 40);
             String EleccionPokemon = sc.nextLine();
+            DatosHistoria.Pokemon = EleccionPokemon;
 
             if (EleccionPokemon.equalsIgnoreCase("Vulpix")) {
 
                 pokemon = "Vulpix";
                 ataqueUno = "'Llamarada' que tiene un rango de daño de 0 a 60";
                 ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
-                vidaInicio = DatosPokemon.vidaVulpix();
+                vidaInicio = Metodos.vidaInicialPokemon();
 
                 Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
@@ -71,7 +72,7 @@ public class HistoriaPrincipal {
                 pokemon = "Staryu";
                 ataqueUno = "'Hidropulso' que tiene un rango de daño de 0 a 60";
                 ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
-                vidaInicio = DatosPokemon.vidaStaryu();
+                vidaInicio = Metodos.vidaInicialPokemon();
 
                 Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
@@ -84,7 +85,7 @@ public class HistoriaPrincipal {
                 pokemon = "Nidoran";
                 ataqueUno = "'Onda toxica' que tiene un rango de daño de 0 a 60";
                 ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
-                vidaInicio = DatosPokemon.vidaNidoran();
+                vidaInicio = Metodos.vidaInicialPokemon();
 
                 Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
@@ -153,7 +154,7 @@ public class HistoriaPrincipal {
         //Pruebas de Juanda para la pelea
 
 
-        System.out.println("Has elegido: " + DatosHistoria.getPokemon());
+        System.out.println("Has elegido: " + DatosHistoria.Pokemon);
 
         System.out.println("Quieres hacer un ataque? ");
         int ataque = sc.nextInt();

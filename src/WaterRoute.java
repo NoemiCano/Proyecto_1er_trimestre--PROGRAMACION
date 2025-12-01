@@ -12,7 +12,7 @@ public class WaterRoute {
     }
     public static void waterRoute() {
 
-        if (returnLake == false) {
+        if (!returnLake) {
 
         int choiceWater;
         Metodos.divider();
@@ -45,7 +45,7 @@ public class WaterRoute {
             System.out.println("Finalmente, llegas al borde del lago. El agua sigue brillando con su luz misteriosa y calma, como si nada hubiera pasado, pero el recuerdo de las sombras permanece. Ahora debes decidir tu próximo paso con cuidado.\n");
 
             System.out.println(Metodos.purple + "1. Reflejo");
-            System.out.println("No puedes volver al bosque de las sombras, la última vez ya elegiste ese camino.");
+            System.out.println(Metodos.green + "2. Sombras");
             System.out.println(Metodos.blue + "2. Cruzar nadando el lago \n" + Metodos.reset);
             choiceWater = errores.comprobar(sc, "¿Qué decides?",1, 3);
 
@@ -68,7 +68,7 @@ public class WaterRoute {
 
         System.out.println("Vuelves a observar el agua, dudando si lo que viste fue real o producto de tu imaginación. Pero ahora no tienes más remedio: debes volver a elegir qué hacer.\n");
 
-        if(returnLake == true){
+        if(!returnLake){
 
             DatosHistoria.vidaActual -= 10;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
@@ -102,7 +102,7 @@ public class WaterRoute {
 
         System.out.println(Metodos.purple + "1. Pasar corriendo através del lago");
         System.out.println(Metodos.blue + "2. Retroceder y volver al lago");
-        System.out.println(Metodos.red + "3.Enfrentar y atacar a las sombras junto a tu Pokémon." + Metodos.reset);
+        System.out.println(Metodos.red + "3. Atacar a las sombras." + Metodos.reset);
         choiceShadows = errores.comprobar(sc, "¿Qué decides?",1, 3);
 
         switch (choiceShadows) {
@@ -152,7 +152,7 @@ public class WaterRoute {
             DatosHistoria.vidaActual -= 10;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
 
-            System.out.println(Metodos.green + "1. altar por encima del tronco y arriesgarte a tropezar.");
+            System.out.println(Metodos.green + "1. Saltar por encima del tronco y arriesgarte a tropezar.");
             System.out.println(Metodos.blue + "2. Rodearlo, adentrándote entre la maleza y moviéndote más despacio, pero con más cuidado." + Metodos.reset);
             choicePath = errores.comprobar(sc, "¿Cómo superas el obstáculo?",1, 2);
 
@@ -170,6 +170,47 @@ public class WaterRoute {
     static void atacar() {
         int choiceAtack;
         Metodos.divider();
+        System.out.println("Decides enfrentarte contra las sombras con tu pokemon");
+
+        DatosHistoria.vidaActual -= 10;
+        System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
+
+        System.out.println("¿Qué ataque quieres usar?");
+        System.out.println(Metodos.green + "1. Ataque 1.");
+        System.out.println(Metodos.blue + "2. Ataque 2" + Metodos.reset);
+        choiceAtack = errores.comprobar(sc, "¿---?",1, 2);
+
+        if(choiceAtack == 1){
+            Metodos.ataque1();
+            System.out.println("Tu pokemon ha utilizado XXX cantidad de daño: " + Metodos.ataque1());
+        }else if(choiceAtack == 2){
+            Metodos.ataque2();
+            System.out.println("Tu pokemon ha utilizado XXX cantidad de daño: " + Metodos.ataque2());
+        }
+
+        if(Metodos.ataque1 >= 20 || Metodos.ataque2 >= 20){
+
+            DatosHistoria.vidaActual -= 10;
+            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
+            System.out.println(Metodos.green + "Consigues atacar a las sombras y huir con éxito." + Metodos.reset + "\n");
+
+            System.out.println("Finalmente atraviesas el último tramo del bosque y la luz te envuelve de golpe.");
+            cofre();
+
+        }else{
+            DatosHistoria.vidaActual -= 10;
+            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
+
+            System.out.println("Las sombras consiguen esquivar tu ataque y te atacan de nuevo. ¡Tu pokemon vuelve a perder vida!");
+            System.out.println("Sales corriedo con él para protegerle.");
+
+            DatosHistoria.vidaActual -= 20;
+            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
+
+            System.out.println("Finalmente atraviesas el último tramo del bosque y la luz te envuelve de golpe.");
+            cofre();
+
+        }
 
     }
 
@@ -177,12 +218,14 @@ public class WaterRoute {
 
         System.out.println("Decides tirarte al lago y ----");
 
-        if(returnLake==true){
+        if(returnLake){
             DatosHistoria.vidaActual -= 10;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
         }
 
         if(DatosHistoria.Pokemon.equals("Vulpix")){
+
+            System.out.println("aaa");
 
         }
     }
@@ -198,6 +241,26 @@ public class WaterRoute {
         System.out.println(Metodos.red + "2. ¿O ignorarlo y continuar tu camino sin mirar atrás?" + Metodos.reset);
         choiceTreasure = errores.comprobar(sc, "¿Qué decides?",1, 2);
 
+        if(choiceTreasure == 1){
+
+            int pokeball = DatosPokemon.random.nextInt(0, 101);
+            System.out.println("Abres el cofre y encuentras -Poción- -Piedra evolución Agua-");
+
+            if(pokeball >= 50){
+                System.out.println("Tienes suerte y consigues una pokeball ¿Te servirá para algo en el resto de tu aventura?");
+            }
+
+
+        }else if(choiceTreasure == 2){
+            cofreComprobar();
+        }
+    }
+
+    static void cofreComprobar(){
+
+        int choiceTreasure;
+
+        System.out.println("¿Estás seguro de qué quieres ignorar el cofre?");
 
     }
 

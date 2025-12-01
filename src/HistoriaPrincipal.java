@@ -52,6 +52,7 @@ public class HistoriaPrincipal {
 
             Metodos.slowPrintln("¿A quien quieres elegir?", 40);
             String EleccionPokemon = sc.nextLine();
+            DatosHistoria.Pokemon = EleccionPokemon;
 
             if (EleccionPokemon.equalsIgnoreCase("Vulpix")) {
 

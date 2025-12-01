@@ -96,4 +96,15 @@ public class Metodos {
         return totalVida;
     }
 
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -143,6 +143,8 @@ public class HistoriaPrincipal {
             } else {
                 Metodos.slowPrintln("Por favor, elige un número del 1 al 3", 40);
             }
+
+            DatosHistoria.arrayInventario[0] = DatosHistoria.objetoInicial;
         }
 
         // Elección de ruta

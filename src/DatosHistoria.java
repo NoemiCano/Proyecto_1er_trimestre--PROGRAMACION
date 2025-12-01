@@ -31,6 +31,6 @@ public class DatosHistoria {
 
     public static int vidaActual;
 
-
+    public static String[] arrayInventario = new String[4];
 
 }

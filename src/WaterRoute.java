@@ -4,53 +4,87 @@ public class WaterRoute {
 
     static Scanner sc = new Scanner(System.in);
 
+    static boolean returnLake = false;
+
     public static void main(String[] args) {
 
         waterRoute();
     }
     public static void waterRoute() {
 
+        if (returnLake == false) {
+
         int choiceWater;
         Metodos.divider();
 
-        System.out.println("Al avanzar por el camino de (... ) te encuentras con un lago de aguas cristalinas, al mirar a tu alrededor ves algo que se refleja en el borde del lago \n (sombras familiares - - un camino de árboles que rodea el lago rodeado de unas sombras (?? ), no estás seguro de si seguir mirando o continuar tu camino tratando de cruzar el lago nadando, \n (no estás seguro de si tu pokemon podrá seguir tu ritmo).\n");
+        Metodos.slowPrintln("Al avanzar por el camino del Lago Ilusorio, el bosque se abre y deja ver un lago de aguas tan claras que parece irreal. La superficie refleja el cielo como si fuera un espejo perfecto, aunque hay algo extraño en él… como si el reflejo tardara un segundo en seguir tus movimientos.\n" +
+        "A un lado del lago, el agua proyecta una figura que no reconoces del todo, un reflejo que parece llamarte.\n" +
+        "Más adelante, entre los árboles que rodean el lago, se mueven unas sombras alargadas, casi familiares, que se deslizan sin hacer ruido.\n" +
+        "Y al observar el centro del lago, parece que podría cruzarse nadando, aunque no estás seguro de si tu Pokémon podrá seguir tu ritmo o si será demasiado peligroso.\n", 5);
 
-        choiceWater = errores.comprobar(sc, "¿Qué decides?",1, 3);
         System.out.println(Metodos.purple + "1. Reflejo");
-        System.out.println(Metodos.green + "2.Sombras");
-        System.out.println(Metodos.blue + "3.Cruzar nadando el lago" + Metodos.reset);
+        System.out.println(Metodos.green + "2. Sombras");
+        System.out.println(Metodos.blue + "3. Cruzar nadando el lago" + Metodos.reset);
+        choiceWater = errores.comprobar(sc, "¿Qué decides?",1, 3);
 
         switch (choiceWater) {
             case 1-> reflejos();
             case 2 -> sombras();
             case 3 -> nadar();
         }
-    }
+        }else  {
 
-    public static void waterRouteReturn() {
+            int choiceWater;
+            Metodos.divider();
 
-        int choiceWater;
-        Metodos.divider();
+            System.out.println("Sin pensarlo dos veces, decides huir. Retrocedes con cuidado por el mismo camino, evitando el contacto directo, mientras tu Pokémon sufre daño por las sombras que lo rozan. La carrera es tensa y rápida, y cada paso hace que tu corazón lata con fuerza.\n");
 
-        System.out.println("Al avanzar por el camino de (... ) te encuentras con un lago de aguas cristalinas, al mirar a tu alrededor ves algo que se refleja en el borde del lago \n (sombras familiares - - un camino de árboles que rodea el lago rodeado de unas sombras (?? ), no estás seguro de si seguir mirando o continuar tu camino tratando de cruzar el lago nadando, \n (no estás seguro de si tu pokemon podrá seguir tu ritmo).\n");
+            DatosHistoria.vidaActual -= 10;
+            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
 
-        choiceWater = errores.comprobar(sc, "¿Qué decides?",1, 3);
-        System.out.println(Metodos.purple + "1. Reflejo");
-        System.out.println(Metodos.green + "2.Sombras");
-        System.out.println(Metodos.blue + "3.Cruzar nadando el lago \n" + Metodos.reset);
+            System.out.println("Finalmente, llegas al borde del lago. El agua sigue brillando con su luz misteriosa y calma, como si nada hubiera pasado, pero el recuerdo de las sombras permanece. Ahora debes decidir tu próximo paso con cuidado.\n");
 
-        switch (choiceWater) {
-            case 1-> reflejos();
-            case 2 -> sombras();
-            case 3 -> nadar();
+            System.out.println(Metodos.purple + "1. Reflejo");
+            System.out.println("No puedes volver al bosque de las sombras, la última vez ya elegiste ese camino.");
+            System.out.println(Metodos.blue + "2. Cruzar nadando el lago \n" + Metodos.reset);
+            choiceWater = errores.comprobar(sc, "¿Qué decides?",1, 3);
+
+            switch (choiceWater) {
+                case 1-> reflejos();
+                case 2 -> sombras();
+                case 3 -> nadar();
+            }
         }
     }
 
     static void reflejos(){
 
-        System.out.println("Te encuentras un poco mareado");
+        int choiceWater;
+        Metodos.divider();
 
-        waterRouteReturn();
+        System.out.println("Apenas te acercas al borde del lago, el reflejo comienza a distorsionarse como si el agua temblara sin motivo. Por un instante, ves una figura que parece imitar tus movimientos… pero no a la perfección. Antes de que puedas reaccionar, sientes un ligero mareo, como si el mundo se inclinara bajo tus pies.\n");
+
+        System.out.println("Parpadeas un par de veces y, cuando recuperas el equilibrio, ya no estás donde creías estar. Te encuentras de nuevo frente al lago, exactamente en el mismo punto donde habías comenzado. No recuerdas qué acaba de ocurrir, solo una sensación de vacío y confusión recorriendo tu mente.\n");
+
+        System.out.println("Vuelves a observar el agua, dudando si lo que viste fue real o producto de tu imaginación. Pero ahora no tienes más remedio: debes volver a elegir qué hacer.\n");
+
+        if(returnLake == true){
+
+            DatosHistoria.vidaActual -= 10;
+            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
+
+        }
+
+        System.out.println(Metodos.purple + "1. Reflejo");
+        System.out.println(Metodos.green + "2. Sombras");
+        System.out.println(Metodos.blue + "3. Cruzar nadando el lago" + Metodos.reset);
+        choiceWater = errores.comprobar(sc, "¿Qué decides?",1, 3);
+
+        switch (choiceWater) {
+            case 1-> reflejos();
+            case 2 -> sombras();
+            case 3 -> nadar();
+        }
 
     }
 
@@ -59,22 +93,83 @@ public class WaterRoute {
         int choiceShadows;
         Metodos.divider();
 
-        System.out.println("Decides cruzar el camino de las sombras, \n sombras similares a () hacen daño a tu pokemon \n a \n.¡Tienes que huir los más rápido posible!");
-        System.out.println("Al final del camino entre los árboles ves una luz, puede que tu pokemon y tu podais atravesar el bosque corriendo.");
-        System.out.println("Seguís cerca del lago, puede que retroceder sea una mejor opción.");
-        System.out.println("¡Estas sombras no podran con nosotros! La mejor opción es atacar.");
+        System.out.println("Decides adentrarte por el sendero donde se mueven esas sombras silenciosas. A medida que avanzas, la luz se vuelve tenue y las figuras se vuelven más nítidas, casi como si te observaran desde el borde del camino. Su presencia resulta inquietante, y notas que tu Pokémon se tensa, como si las reconociera… o temiera algo en ellas.");
+        System.out.println("¡Tienes que reaccionar rápido! Las sombras se aproximan y cada segundo que pasa parecen más agresivas.");
+        System.out.println("Entre los árboles, al fondo, aparece una luz que podría ser una salida. El lago sigue cerca, y podrías retroceder para volver al punto inicial. También cabe la posibilidad de enfrentarte a las sombras.");
 
-        choiceShadows = errores.comprobar(sc, "¿Qué decides?",1, 3);
+        DatosHistoria.vidaActual -= 10;
+        System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
+
         System.out.println(Metodos.purple + "1. Pasar corriendo através del lago");
         System.out.println(Metodos.blue + "2. Retroceder y volver al lago");
-        System.out.println(Metodos.blue + "3.Cruzar nadando el lago" + Metodos.reset);
+        System.out.println(Metodos.red + "3.Enfrentar y atacar a las sombras junto a tu Pokémon." + Metodos.reset);
+        choiceShadows = errores.comprobar(sc, "¿Qué decides?",1, 3);
 
         switch (choiceShadows) {
-            case 1-> reflejos();
-            case 2 -> waterRouteReturn();
-            case 3 -> nadar();
+            case 1-> pasar();
+            case 2 -> {
+                returnLake = true;
+                waterRoute();
+            }
+            case 3 -> atacar();
         }
 
+    }
+
+    static void pasar(){
+
+        int choicePath;
+
+        System.out.println("Apenas decides correr hacia la luz, tu corazón late con fuerza. El sendero entre los árboles es estrecho y las sombras se acercan más rápido de lo que esperabas. Tu Pokémon corre a tu lado, pero puedes sentir su tensión en cada paso.\n" +
+        "La luz al final del camino parece cercana, pero el sendero se bifurca de repente en dos direcciones, ambas igual de estrechas y con árboles retorcidos que casi bloquean el paso.");
+        System.out.println("Debes decidir rápido:\n" +
+        "¿Tomar el desvío de la izquierda, donde el viento sopla ligeramente y se escucha movimiento entre las hojas…?\n" +
+        "¿O el de la derecha, donde todo está completamente silencioso, como si el bosque contuviera el aliento?");
+
+        DatosHistoria.vidaActual -= 10;
+        System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
+
+        System.out.println(Metodos.green + "1. Camino de la derecha.");
+        System.out.println(Metodos.blue + "2. Camino de la izquierda." + Metodos.reset);
+        choicePath = errores.comprobar(sc, "¿Qué decides?",1, 2);
+
+        if(choicePath == 1){
+
+            System.out.println("Eliges continuar por el camino de la derecha, corres sin mirar atrás, sintiendo cómo las sombras se desvanecen poco a poco. Finalmente atraviesas el último tramo del bosque y la luz te envuelve de golpe.");
+            System.out.println(Metodos.green + "Respiras aliviado. Has escapado." + Metodos.reset + "\n");
+
+            DatosHistoria.vidaActual -= 10;
+            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
+
+            cofre();
+
+        } else if (choicePath == 2){
+
+            System.out.println("Decides tomar el desvío de la izquierda. El viento se intensifica entre las hojas, haciendo que los árboles crujan de forma inquietante. \nAlgo parece moverse a lo lejos, pero no logras distinguir si son sombras del bosque o simples ramas agitadas.");
+
+            System.out.println("A medida que avanzas, el sendero se estrecha más y aparece un tronco caído bloqueando parcialmente tu paso. Tienes varias ideas de cómo continuar. ");
+
+            DatosHistoria.vidaActual -= 10;
+            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
+
+            System.out.println(Metodos.green + "1. altar por encima del tronco y arriesgarte a tropezar.");
+            System.out.println(Metodos.blue + "2. Rodearlo, adentrándote entre la maleza y moviéndote más despacio, pero con más cuidado." + Metodos.reset);
+            choicePath = errores.comprobar(sc, "¿Cómo superas el obstáculo?",1, 2);
+
+            System.out.println("Logras salir del estrecho sendero y finalmente te adentras en una pequeña pradera iluminada por la luz del sol.");
+            System.out.println(Metodos.green + "Respiras aliviado. Has dejado atrás las sombras del bosque." + Metodos.reset + "\n");
+
+            DatosHistoria.vidaActual -= 10;
+            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
+
+            cofre();
+
+        }
+    }
+
+    static void atacar() {
+        int choiceAtack;
+        Metodos.divider();
 
     }
 
@@ -82,9 +177,28 @@ public class WaterRoute {
 
         System.out.println("Decides tirarte al lago y ----");
 
-        if(DatosHistoria.pokemon.equals("Vulpix")){
+        if(returnLake==true){
+            DatosHistoria.vidaActual -= 10;
+            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
+        }
+
+        if(DatosHistoria.Pokemon.equals("Vulpix")){
 
         }
+    }
+
+    static void cofre(){
+
+        int choiceTreasure;
+
+        System.out.println("Frente a ti, se abre una pequeña explanada circular iluminada por el sol. En el centro, sobre una roca plana, descansa un cofre antiguo, cubierto de polvo y con un brillo tenue alrededor del cierre. No hay señales de peligro, pero el silencio que lo rodea resulta extraño.");
+
+        System.out.println("Ahora tienes una nueva elección:\n");
+        System.out.println(Metodos.green + "1. ¿Abrir el cofre y descubrir qué guarda en su interior?");
+        System.out.println(Metodos.red + "2. ¿O ignorarlo y continuar tu camino sin mirar atrás?" + Metodos.reset);
+        choiceTreasure = errores.comprobar(sc, "¿Qué decides?",1, 2);
+
+
     }
 
 }

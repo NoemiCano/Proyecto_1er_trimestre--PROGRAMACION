@@ -7,7 +7,7 @@ public class errores {
     public static int comprobar(Scanner sc, String texto) {
 
         while (true) {
-            System.out.print(texto);
+            Metodos.slowPrint(texto, 40);
 
             if (sc.hasNextInt()) {
 
@@ -17,7 +17,7 @@ public class errores {
                 return valor;
 
             } else {
-                System.out.println("Entrada inválida: introduce un número entero.");
+                Metodos.slowPrintln("Entrada inválida: introduce un número entero.", 40);
                 sc.nextLine();
             }
         }
@@ -30,7 +30,7 @@ public class errores {
 
             if (valor < min || valor > max) {
 
-                System.out.println("Valor fuera de rango. Debe estar entre " + min + " y " + max + ".");
+                Metodos.slowPrintln("Valor fuera de rango. Debe estar entre " + min + " y " + max + ".", 40);
 
             } else {
                 return valor;
@@ -40,7 +40,7 @@ public class errores {
 
     public static double comprobarDouble(Scanner sc, String texto) {
         while (true) {
-            System.out.print(texto);
+            Metodos.slowPrint(texto, 40);
 
             if (sc.hasNextDouble()) {
                 double valor = sc.nextDouble();
@@ -49,7 +49,7 @@ public class errores {
                 return valor;
 
             } else {
-                System.out.println("Entrada inválida: introduce un número (puede tener decimales).");
+                Metodos.slowPrintln("Entrada inválida: introduce un número (puede tener decimales).", 40);
                 sc.nextLine();
             }
         }
@@ -61,7 +61,7 @@ public class errores {
 
             if (valor < min || valor > max) {
 
-                System.out.println("Valor fuera de rango. Debe estar entre " + min + " y " + max + ".");
+                Metodos.slowPrintln("Valor fuera de rango. Debe estar entre " + min + " y " + max + ".", 40);
 
             } else {
                 return valor;
@@ -72,12 +72,12 @@ public class errores {
     public static String comprobarString(Scanner sc, String prompt) {
 
         while (true) {
-            System.out.print(prompt);
+            Metodos.slowPrint(prompt, 40);
             String line = sc.nextLine();
 
             if (line.trim().isEmpty()) {
 
-                System.out.println("Entrada vacía. Introduce algún texto.");
+                Metodos.slowPrintln("Entrada vacía. Introduce algún texto.", 40);
 
             } else {
                 return line;
@@ -87,7 +87,7 @@ public class errores {
 
     public static String comprobarStringVacio(Scanner sc, String prompt) {
 
-        System.out.print(prompt);
+        Metodos.slowPrint(prompt, 40);
         return sc.nextLine();
     }
 

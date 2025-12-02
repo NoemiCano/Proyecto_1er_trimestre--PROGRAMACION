@@ -12,6 +12,7 @@ public class WaterRoute {
     }
     public static void waterRoute() {
 
+        DatosHistoria.Pokemon = "Vulpix";
         if (!returnLake) {
 
         int choiceWater;
@@ -31,6 +32,7 @@ public class WaterRoute {
             case 1-> reflejos();
             case 2 -> sombras();
             case 3 -> nadar();
+            case 4 -> Metodos.verInventario(DatosHistoria.arrayInventario);
         }
         }else  {
 
@@ -68,7 +70,7 @@ public class WaterRoute {
 
         System.out.println("Vuelves a observar el agua, dudando si lo que viste fue real o producto de tu imaginación. Pero ahora no tienes más remedio: debes volver a elegir qué hacer.\n");
 
-        if(!returnLake){
+        if(returnLake){
 
             DatosHistoria.vidaActual -= 10;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
@@ -188,7 +190,7 @@ public class WaterRoute {
             System.out.println("Tu pokemon ha utilizado XXX cantidad de daño: " + Metodos.ataque2());
         }
 
-        if(Metodos.ataque1 >= 20 || Metodos.ataque2 >= 20){
+        if(Metodos.ataque1() >= 20 || Metodos.ataque2() >= 20){
 
             DatosHistoria.vidaActual -= 10;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
@@ -223,11 +225,31 @@ public class WaterRoute {
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
         }
 
-        if(DatosHistoria.Pokemon.equals("Vulpix")){
+        if(DatosHistoria.Pokemon.equalsIgnoreCase("Vulpix")){
 
-            System.out.println("aaa");
+            System.out.println("Tu pokemon es de fuego ¡Pierde la mitad de su vida!");
+            DatosHistoria.vidaActual /= 2;
+            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
+            System.out.println("Consigues ayudarle a cruzar el lago y sobrevivís los dos. ");
 
+            cofre();
+
+        }else if(DatosHistoria.Pokemon.equalsIgnoreCase("Nidoran")){
+
+            System.out.println("Tu pokemon es de sombra ¡Pierde la mitad de su vida!");
+            DatosHistoria.vidaActual /= 2;
+            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
+            System.out.println("Consigues ayudarle a cruzar el lago y sobrevivís los dos. ");
+
+            cofre();
+
+        }else if(DatosHistoria.Pokemon.equalsIgnoreCase("Staryu")){
+
+            System.out.println("Tu pokemon tiene afinidad con el agua y te ayuda a cruzar el lago a mayor velocidad ¡Ambos conseguís cruzar con vida!");
+
+            cofre();
         }
+
     }
 
     static void cofre(){
@@ -243,11 +265,28 @@ public class WaterRoute {
 
         if(choiceTreasure == 1){
 
-            int pokeball = DatosPokemon.random.nextInt(0, 101);
-            System.out.println("Abres el cofre y encuentras -Poción- -Piedra evolución Agua-");
+            int pokeball = Metodos.random.nextInt(0, 101);
+            System.out.println("Abres el cofre y encuentras una " + Metodos.green + "Poción de vida" + Metodos.reset + " y una " + Metodos.green + "Piedra de Evolución de Agua." + Metodos.reset);
+
+            for(int i = 0; i < DatosHistoria.arrayInventario.length; i++){
+
+                if(DatosHistoria.arrayInventario[i].equals(null)){
+                    DatosHistoria.arrayInventario[i] = "Poción de vida";
+                    DatosHistoria.arrayInventario[i++] = "Piedra Agua";
+                    break;
+                }
+            }
 
             if(pokeball >= 50){
-                System.out.println("Tienes suerte y consigues una pokeball ¿Te servirá para algo en el resto de tu aventura?");
+                System.out.println("Además, tienes suerte y encuentras una pokeball ¿Te servirá para algo en el resto de tu aventura?");
+
+                for(int i = 0; i < DatosHistoria.arrayInventario.length; i++){
+
+                    if(DatosHistoria.arrayInventario[i].equals(null)){
+                        DatosHistoria.arrayInventario[i] = "Pokeball";
+                        break;
+                    }
+                }
             }
 
 
@@ -258,9 +297,23 @@ public class WaterRoute {
 
     static void cofreComprobar(){
 
-        int choiceTreasure;
+        String choiceTreasure;
 
         System.out.println("¿Estás seguro de qué quieres ignorar el cofre?");
+        choiceTreasure = errores.comprobarString(sc, "Escribe 'Si' para abrir el cofre o 'No' para continuar. ");
+
+        if(choiceTreasure.equalsIgnoreCase("Si")){
+
+            int pokeball = Metodos.random.nextInt(0, 101);
+            System.out.println("Abres el cofre y encuentras -Poción- -Piedra evolución Agua-");
+
+            if(pokeball >= 50){
+                System.out.println("Tienes suerte y consigues una pokeball ¿Te servirá para algo en el resto de tu aventura?");
+            }
+
+        }else if(choiceTreasure.equalsIgnoreCase("No")){
+            cofreComprobar();
+        }
 
     }
 

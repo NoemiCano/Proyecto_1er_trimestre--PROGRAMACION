@@ -15,15 +15,6 @@ En este proyecto hemos desarrollado una aventura narrativa interactiva que se ej
 * IntelliJ IDEA
 * Git y GitHub
 
-## Estructura del proyecto
-src/
-├── main/
-│    ├── java/
-│    │     ├── DatosHistoria.java
-│    │     ├── Evolucion.java
-│    │     └── Main.java
-└── test/
-
 ## Ejecución del proyecto
 1. Abre el proyecto en tu IDE preferido
 2. Compila el proyecto

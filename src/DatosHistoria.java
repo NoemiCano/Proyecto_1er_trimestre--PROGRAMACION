@@ -25,8 +25,6 @@ public class DatosHistoria {
 
     public static int vidaInicial;
 
-    public static void setVidaInicial(int vidaInicio) { vidaInicial = vidaInicio; }
-
     //Aquí es donde se debería de ir actualizando la vida actual del pokemon
 
     public static int vidaActual;

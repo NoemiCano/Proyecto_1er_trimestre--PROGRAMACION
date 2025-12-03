@@ -30,13 +30,13 @@ public class Evolucion {
         String piedra = DatosHistoria.arrayInventario[indicePiedra];
         String pokemon = DatosHistoria.Pokemon;
 
-        if (piedra.equalsIgnoreCase("PiedraLunar") && pokemon.equalsIgnoreCase("Nidoran")) {
+        if (piedra.equalsIgnoreCase("Piedra Lunar") && pokemon.equalsIgnoreCase("Nidoran")) {
             preguntarEvolucion(sc, "Nidoking");
 
-        } else if (piedra.equalsIgnoreCase("PiedraFuego") && pokemon.equalsIgnoreCase("Vulpix")) {
+        } else if (piedra.equalsIgnoreCase("Piedra Fuego") && pokemon.equalsIgnoreCase("Vulpix")) {
             preguntarEvolucion(sc, "Ninetales");
 
-        } else if (piedra.equalsIgnoreCase("PiedraAgua") && pokemon.equalsIgnoreCase("Staryu")) {
+        } else if (piedra.equalsIgnoreCase("Piedra Agua") && pokemon.equalsIgnoreCase("Staryu")) {
             preguntarEvolucion(sc, "Starmie");
 
         }

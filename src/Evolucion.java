@@ -14,7 +14,7 @@ public class Evolucion {
 
             if (tienesPiedra == null) continue;
 
-            if(tienesPiedra.equalsIgnoreCase("PiedraLunar") || DatosHistoria.arrayInventario[i].equalsIgnoreCase("PiedraFuego") || DatosHistoria.arrayInventario[i].equalsIgnoreCase("PiedraAgua")){
+            if(tienesPiedra.equalsIgnoreCase("Piedra Lunar") || DatosHistoria.arrayInventario[i].equalsIgnoreCase("Piedra Fuego") || DatosHistoria.arrayInventario[i].equalsIgnoreCase("Piedra Agua")){
                 Metodos.slowPrintln("Parece que has obtenido una piedra de evolución.", 40);
                 return i;
             }

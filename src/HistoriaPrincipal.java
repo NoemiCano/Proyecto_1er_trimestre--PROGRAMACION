@@ -18,7 +18,7 @@ public class HistoriaPrincipal {
         //Inicio de la aventura
 
         while(true) {
-            Metodos.slowPrintln("¿Quieres iniciar la aventura?", 40);
+            Metodos.slowPrintln("¿Quieres iniciar la aventura? Si/No", 40);
             String decision = sc.nextLine();
             if (decision.equalsIgnoreCase("si")) {
                 Metodos.slowPrintln("Despiertas en tu habitación sin recuerdos claros, aunque todo te resulta familiar... sientes que algo no va bien...", 40);
@@ -109,6 +109,7 @@ public class HistoriaPrincipal {
         Metodos.slowPrintln( Metodos.yellow + "1. Linterna (amplifica la visión en lugares oscuros)", 40);
         Metodos.slowPrintln(Metodos.red + "2. Poción de vida (ayudará a tu pokemon a recuperar algo de vida)", 40);
         Metodos.slowPrintln(Metodos.green+ "3. Revivir (revive a tu pokemon en el caso de quedarse sin vida)" + Metodos.reset, 40);
+        Metodos.slowPrintln("Escribe el numero del objeto que quieras obtener ", 40);
 
         while (true) {
 

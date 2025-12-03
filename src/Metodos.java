@@ -193,18 +193,10 @@ public class Metodos {
             if(opcion.equalsIgnoreCase("Si")) {
                 verInventario(inventario);
             }else if(opcion.equalsIgnoreCase("No")){
-                //
-                //
-                return;
-                //
-                //
             }
 
         }else{
 
-            //helper/contador -- un elemento que solo sepa q esta sucediendo y muestre algo o no según si ya has pasado por ahí o no
-
-            // lista?????
 
         }
     }

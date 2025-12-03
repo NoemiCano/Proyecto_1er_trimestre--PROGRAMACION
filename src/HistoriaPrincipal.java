@@ -121,7 +121,9 @@ public class HistoriaPrincipal {
                 objetoInventario = "Linterna";
 
                 Metodos.slowPrintln("Has elegido la linterna", 40);
-                DatosHistoria.setObjetoInicial(objetoInventario);
+
+                //DatosHistoria.setObjetoInicial(objetoInventario);
+                DatosHistoria.arrayInventario[0] = DatosHistoria.setObjetoInicial(objetoInventario);
                 break;
 
             } else if (objetoInventario.equalsIgnoreCase("2")) {
@@ -129,7 +131,7 @@ public class HistoriaPrincipal {
                 objetoInventario = "Poción de vida";
 
                 Metodos.slowPrintln("Has elegido la poción de vida", 40);
-                DatosHistoria.setObjetoInicial(objetoInventario);
+                DatosHistoria.arrayInventario[0] = DatosHistoria.setObjetoInicial(objetoInventario);
                 break;
 
             } else if (objetoInventario.equalsIgnoreCase("3")) {
@@ -144,7 +146,7 @@ public class HistoriaPrincipal {
                 Metodos.slowPrintln("Por favor, elige un número del 1 al 3", 40);
             }
 
-            DatosHistoria.arrayInventario[0] = DatosHistoria.objetoInicial;
+            DatosHistoria.arrayInventario[0] = objetoInventario;
         }
 
         // Elección de ruta

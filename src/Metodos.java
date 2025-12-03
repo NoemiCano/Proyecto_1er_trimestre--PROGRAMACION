@@ -126,30 +126,56 @@ public class Metodos {
 
                         System.out.println("En este momento no puedes utilizar la linterna, continua avanzando en la historia. \n");
 
-                        Metodos.slowPrintln("¿Quieres seleccionar otro objeto de tu inventario?", 40);
-                        opcion = errores.comprobarString(sc, "Introduce Si o No");
-
-                        if(opcion.equalsIgnoreCase("Si")) {
-                            verInventario(inventario);
-                        }else if(opcion.equalsIgnoreCase("No")){
-                            break;
-                        }
 
                     }else if(inventario[i].equalsIgnoreCase(null)) {
 
                     }else if(!inventario[i].equalsIgnoreCase("Linterna")){
 
-                        System.out.println("No tienes linternas en tu inventario. \n");
+                    }
+                }
+                System.out.println("No tienes linternas en tu inventario. \n");
+
+            }else if(opcion.equalsIgnoreCase("Poción de vida")) {
+
+                for (int i = 0; i < inventario.length; i++) {
+
+                    if(inventario[i].equalsIgnoreCase("Poción de vida")) {
+
+                        DatosHistoria.vidaActual += 30;
+                        System.out.println("Has utilizado la poción de vida. \n");
+
+                        inventario[i] = null;
+
+                        if(DatosHistoria.vidaActual > DatosHistoria.vidaInicial){
+
+                            DatosHistoria.vidaActual  -= (DatosHistoria.vidaActual - DatosHistoria.vidaInicial);
+                        }
+
+                        System.out.println("La vida de " + DatosHistoria.Pokemon + " es: " + DatosHistoria.vidaActual + "\n");
+
+                    }else if(inventario[i].equalsIgnoreCase(null)) {
+
+                    }else if(!inventario[i].equalsIgnoreCase("Poción de vida")){
 
                     }
                 }
-
-
-
-                System.out.println("En este momento no puedes utilizar la linterna, ");
-            }else if(opcion.equalsIgnoreCase("Poción de vida")) {
+                System.out.println("No tienes pociones de vida en tu inventario. \n");
 
             }else if(opcion.equalsIgnoreCase("Revivir")) {
+
+                for (int i = 0; i < inventario.length; i++) {
+
+                    if(inventario[i].equalsIgnoreCase("Poción de vida")) {
+
+                        System.out.println("En este momento no puedes utilizar el revivir, tu pokemon continua con vida. \n");
+
+                    }else if(inventario[i].equalsIgnoreCase(null)) {
+
+                    }else if(!inventario[i].equalsIgnoreCase("Revivir")){
+
+                    }
+                }
+                System.out.println("No tienes revivir en tu inventario. \n");
 
             }else if(opcion.equalsIgnoreCase("Piedra Agua")||opcion.equalsIgnoreCase("Piedra Fuego")||opcion.equalsIgnoreCase("Piedra Lunar")) {
 
@@ -164,6 +190,16 @@ public class Metodos {
             Metodos.slowPrintln("¿Quieres seleccionar otro objeto de tu inventario?", 40);
             opcion = errores.comprobarString(sc, "Introduce Si o No");
 
+            if(opcion.equalsIgnoreCase("Si")) {
+                verInventario(inventario);
+            }else if(opcion.equalsIgnoreCase("No")){
+                //
+                //
+                return;
+                //
+                //
+            }
+
         }else{
 
             //helper/contador -- un elemento que solo sepa q esta sucediendo y muestre algo o no según si ya has pasado por ahí o no
@@ -171,8 +207,5 @@ public class Metodos {
             // lista?????
 
         }
-
-
     }
-
 }

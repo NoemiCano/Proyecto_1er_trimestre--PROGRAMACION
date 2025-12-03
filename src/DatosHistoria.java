@@ -18,7 +18,7 @@ public class DatosHistoria {
 
     public static String objetoInicial;
 
-    public static void setObjetoInicial(String objetoInventario) { objetoInicial = objetoInventario; }
+    public static String setObjetoInicial(String objetoInventario) { objetoInicial = objetoInventario; return objetoInicial; }
 
 
     //Guardamos los datos de la vida inicial para poder usarla en otras funciones

@@ -398,7 +398,7 @@ public class WaterRoute {
                 DatosHistoria.arrayInventario[3] = "Pokeball";
             }
 
-            Evolucion.buscarPiedra();
+            Evolucion.evolucionPokemon(sc);
 
         }else if(choiceTreasure == 2){
             inventario = false;
@@ -432,7 +432,7 @@ public class WaterRoute {
 
             }
 
-            Evolucion.buscarPiedra();
+            Evolucion.evolucionPokemon(sc);
 
         }else if(choiceTreasure.equalsIgnoreCase("No")){
             cofreComprobar();

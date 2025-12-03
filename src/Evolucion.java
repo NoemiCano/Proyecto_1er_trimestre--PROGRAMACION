@@ -5,9 +5,6 @@ public class Evolucion {
 
         Scanner sc = new Scanner(System.in);
 
-        DatosHistoria.arrayInventario[0] = "PiedraLunar";
-        DatosHistoria.Pokemon = "Nidoran";
-
         evolucionPokemon(sc);
 
     } public static int buscarPiedra(){

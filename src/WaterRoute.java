@@ -237,33 +237,36 @@ public class WaterRoute {
             inventario = false;
             cofre();
 
-        } else if (choicePath == 2){
+        } else if (choicePath == 2) {
 
             opcion = true;
             inventario = true;
 
-            while(opcion){
-            System.out.println("Decides tomar el desvío de la izquierda. El viento se intensifica entre las hojas, haciendo que los árboles crujan de forma inquietante. \nAlgo parece moverse a lo lejos, pero no logras distinguir si son sombras del bosque o simples ramas agitadas.");
+            while (opcion) {
+                System.out.println("Decides tomar el desvío de la izquierda. El viento se intensifica entre las hojas, haciendo que los árboles crujan de forma inquietante. \nAlgo parece moverse a lo lejos, pero no logras distinguir si son sombras del bosque o simples ramas agitadas.");
 
-            System.out.println("A medida que avanzas, el sendero se estrecha más y aparece un tronco caído bloqueando parcialmente tu paso. Tienes varias ideas de cómo continuar. ");
+                System.out.println("A medida que avanzas, el sendero se estrecha más y aparece un tronco caído bloqueando parcialmente tu paso. Tienes varias ideas de cómo continuar. ");
 
-            opcion = false;
+                opcion = false;
             }
             DatosHistoria.vidaActual -= 10;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
 
-            while(inventario) {
+            while (inventario) {
                 System.out.println(Metodos.green + "1. Saltar por encima del tronco y arriesgarte a tropezar.");
                 System.out.println(Metodos.blue + "2. Rodearlo, adentrándote entre la maleza y moviéndote más despacio, pero con más cuidado.");
                 System.out.println(Metodos.green + "3. Ver inventario." + Metodos.reset);
                 choicePath = errores.comprobar(sc, "¿Cómo superas el obstáculo?", 1, 3);
 
-            }
-
-                if (choicePath == 3) {
+                if (choicePath == 1 || choicePath == 2) {
+                    inventario = false;
+                } else if (choicePath == 3) {
                     opcion = false;
                     Metodos.verInventario(DatosHistoria.arrayInventario);
                 }
+
+            }
+
 
                 System.out.println("Logras salir del estrecho sendero y finalmente te adentras en una pequeña pradera iluminada por la luz del sol.");
                 System.out.println(Metodos.green + "Respiras aliviado. Has dejado atrás las sombras del bosque." + Metodos.reset + "\n");

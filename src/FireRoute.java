@@ -7,17 +7,21 @@ public class FireRoute {
 
     static int seleccionado;
 
-    static void inicioFireRoute() {
-        main(null);
-    }
 
     public static void main(String[] args) {
+
+        inicioFireRoute();
+
+    }
+
+    static void inicioFireRoute() {
+
         opciones();
+
     }
 
     static void opciones() {
         Scanner leer = new Scanner(System.in);
-        boolean linterna = true;
         int opciones = 2;
 
         if ("Vulpix".equals(leer.nextLine())) {
@@ -63,7 +67,7 @@ public class FireRoute {
 
         switch (seleccionado) {
             case 1:
-                if (linterna) {
+                if (true) {
                     System.out.println("Has usado la linterna. Las sombras se dispersan.");
                     recompensa();
                     break;
@@ -118,44 +122,6 @@ public class FireRoute {
                 recompensa();
         }
         return ataqueElegido;
-    }
-
-    public static int vidaVulpix() {
-        int vidaVulpix = 100;
-        String pokemon = "Vulpix";
-        String ataqueUno = "Llamarada";
-        String ataqueDos = "Placaje";
-        System.out.println("Vida de Vulpix: " + vidaVulpix);
-        System.out.println("El primer ataque de Vulpix es: " + ataqueUno + " Hace un rango de daño de 0 a 60");
-        System.out.println("El segundo ataque de Vulpix es: " + ataqueDos + " Hace un rango de daño de 0 a 40");
-        return vidaVulpix;
-    }
-
-    public static int vidaStaryu() {
-        int vidaStaryu = 110;
-        String pokemon = "Staryu";
-        String ataqueUno = "Hidropulso";
-        String ataqueDos = "Placaje";
-        System.out.println("Vida de Staryu: " + vidaStaryu);
-        System.out.println("El primer ataque de Staryu es: " + ataqueUno + " Hace un rango de daño de 0 a 60");
-        System.out.println("El segundo ataque de Staryu es: " + ataqueDos + " Hace un rango de daño de 0 a 40");
-        return vidaStaryu;
-    }
-
-    public static int vidaNidoran() {
-        int vidaNidoran = 120;
-        String pokemon = "Nidoran";
-        String ataqueUno = "Onda toxica";
-        String ataqueDos = "Placaje";
-        System.out.println("Vida de Nidoran: " + vidaNidoran);
-        System.out.println("El primer ataque de Nidoran es: " + ataqueUno + " Hace un rango de daño de 0 a 60");
-        System.out.println("El segundo ataque de Nidoran es: " + ataqueDos + " Hace un rango de daño de 0 a 40");
-        return vidaNidoran;
-    }
-
-    public static int vidaDarkrai() {
-        int vidaDarkrai = 180;
-        return vidaDarkrai;
     }
 
     static void mostrarLento(String texto, int ms) {

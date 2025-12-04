@@ -51,6 +51,7 @@ public class Evolucion {
             if (respuesta.equalsIgnoreCase("si")) {
                 DatosHistoria.Pokemon = evolucion;
                 Metodos.slowPrintln(Metodos.green + "¡Enhorabuena! Tu Pokémon ha evolucionado a: " + evolucion + Metodos.reset, 40);
+                DatosHistoria.vidaActual = Metodos.vidaInicialPokemon();
                 break;
 
             } else if (respuesta.equalsIgnoreCase("no")) {

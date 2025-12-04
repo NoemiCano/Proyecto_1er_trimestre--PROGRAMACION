@@ -13,12 +13,12 @@ public class HistoriaPrincipal {
         Metodos.slowPrint(ascii, 20);
         String nombreUsuario = Metodos.nombreUsuario();
         DatosHistoria.setNombreUsuario(nombreUsuario);
-        Metodos.slowPrintln("Hola, " + DatosHistoria.getNombreUsuario(), 40);
+        Metodos.slowPrintln("Hola, " + DatosHistoria.nombreUsuario, 40);
 
         //Inicio de la aventura
 
         while(true) {
-            Metodos.slowPrintln("¿Quieres iniciar la aventura?", 40);
+            Metodos.slowPrintln("¿Quieres iniciar la aventura? Si/No", 40);
             String decision = sc.nextLine();
             if (decision.equalsIgnoreCase("si")) {
                 Metodos.slowPrintln("Despiertas en tu habitación sin recuerdos claros, aunque todo te resulta familiar... sientes que algo no va bien...", 40);
@@ -52,18 +52,20 @@ public class HistoriaPrincipal {
 
             Metodos.slowPrintln("¿A quien quieres elegir?", 40);
             String EleccionPokemon = sc.nextLine();
+            DatosHistoria.Pokemon = EleccionPokemon;
 
             if (EleccionPokemon.equalsIgnoreCase("Vulpix")) {
 
                 pokemon = "Vulpix";
                 ataqueUno = "'Llamarada' que tiene un rango de daño de 0 a 60";
                 ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
-                vidaInicio = DatosPokemon.vidaVulpix();
+                vidaInicio = Metodos.vidaInicialPokemon();
 
                 Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
-                DatosHistoria.setVidaInicial(vidaInicio);
+                DatosHistoria.vidaInicial=vidaInicio;
+                DatosHistoria.vidaActual=vidaInicio;
                 break;
 
             } else if (EleccionPokemon.equalsIgnoreCase("Staryu")) {
@@ -71,12 +73,13 @@ public class HistoriaPrincipal {
                 pokemon = "Staryu";
                 ataqueUno = "'Hidropulso' que tiene un rango de daño de 0 a 60";
                 ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
-                vidaInicio = DatosPokemon.vidaStaryu();
+                vidaInicio = Metodos.vidaInicialPokemon();
 
                 Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
-                DatosHistoria.setVidaInicial(vidaInicio);
+                DatosHistoria.vidaInicial=vidaInicio;
+                DatosHistoria.vidaActual=vidaInicio;
                 break;
 
             } else if (EleccionPokemon.equalsIgnoreCase("Nidoran")) {
@@ -84,12 +87,13 @@ public class HistoriaPrincipal {
                 pokemon = "Nidoran";
                 ataqueUno = "'Onda toxica' que tiene un rango de daño de 0 a 60";
                 ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
-                vidaInicio = DatosPokemon.vidaNidoran();
+                vidaInicio = Metodos.vidaInicialPokemon();
 
                 Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
                 Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
-                DatosHistoria.setVidaInicial(vidaInicio);
+                DatosHistoria.vidaInicial=vidaInicio;
+                DatosHistoria.vidaActual=vidaInicio;
                 break;
 
             } else {
@@ -108,6 +112,7 @@ public class HistoriaPrincipal {
         Metodos.slowPrintln( Metodos.yellow + "1. Linterna (amplifica la visión en lugares oscuros)", 40);
         Metodos.slowPrintln(Metodos.red + "2. Poción de vida (ayudará a tu pokemon a recuperar algo de vida)", 40);
         Metodos.slowPrintln(Metodos.green+ "3. Revivir (revive a tu pokemon en el caso de quedarse sin vida)" + Metodos.reset, 40);
+        Metodos.slowPrintln("Escribe el numero del objeto que quieras obtener ", 40);
 
         while (true) {
 
@@ -120,7 +125,9 @@ public class HistoriaPrincipal {
                 objetoInventario = "Linterna";
 
                 Metodos.slowPrintln("Has elegido la linterna", 40);
-                DatosHistoria.setObjetoInicial(objetoInventario);
+
+                //DatosHistoria.setObjetoInicial(objetoInventario);
+                DatosHistoria.arrayInventario[0] = DatosHistoria.setObjetoInicial(objetoInventario);
                 break;
 
             } else if (objetoInventario.equalsIgnoreCase("2")) {
@@ -128,7 +135,7 @@ public class HistoriaPrincipal {
                 objetoInventario = "Poción de vida";
 
                 Metodos.slowPrintln("Has elegido la poción de vida", 40);
-                DatosHistoria.setObjetoInicial(objetoInventario);
+                DatosHistoria.arrayInventario[0] = DatosHistoria.setObjetoInicial(objetoInventario);
                 break;
 
             } else if (objetoInventario.equalsIgnoreCase("3")) {
@@ -142,6 +149,8 @@ public class HistoriaPrincipal {
             } else {
                 Metodos.slowPrintln("Por favor, elige un número del 1 al 3", 40);
             }
+
+            DatosHistoria.arrayInventario[0] = objetoInventario;
         }
 
         // Elección de ruta
@@ -153,7 +162,7 @@ public class HistoriaPrincipal {
         //Pruebas de Juanda para la pelea
 
 
-        System.out.println("Has elegido: " + DatosHistoria.getPokemon());
+        System.out.println("Has elegido: " + DatosHistoria.Pokemon);
 
         System.out.println("Quieres hacer un ataque? ");
         int ataque = sc.nextInt();

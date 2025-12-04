@@ -24,7 +24,8 @@ public class PoisonRoute {
 
     static void ahorcado() {
         int vidas = 3;
-        DatosHistoria.vidaInicial = DatosHistoria.vidaActual;
+        int vidaInicial = DatosHistoria.vidaInicial;
+        DatosHistoria.vidaActual = vidaInicial;
         int vidaPokemon = DatosHistoria.vidaActual;
         String pokemon = DatosHistoria.Pokemon;
         System.out.println(vidaPokemon+ " y " + pokemon);
@@ -126,7 +127,6 @@ public class PoisonRoute {
                     if (!acierto) {
                         System.out.println("\u001B[31mEsta letra no esta en la palabra\u001B[0m");
                         vidaPokemon -= 5;
-                        vidaPokemon = DatosHistoria.vidaInicial;
                         letrasFalladas += letra + " ";
                         if (vidaPokemon <= 0) {
                             vidas--;

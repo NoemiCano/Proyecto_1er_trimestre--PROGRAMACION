@@ -89,12 +89,12 @@ public class PoisonRoute {
                         adivinado = true;
                     } else {
                         System.out.println("\u001B[31mINCORRECTO\u001B[0m");
-                        DatosHistoria.vidaActual -= 20;
+                        vidaPokemon -= 20;
                         if (vidaPokemon <= 0) {
                             vidas--;
                             if (vidas > 0) {
                                 System.out.println("\u001B[31mPS DE TU POKEMON AGOTADOS\u001B[0m");
-                                DatosHistoria.vidaActual = DatosHistoria.vidaInicial;
+                                vidaPokemon = DatosHistoria.vidaInicial;
                                 palabraOculta = new char[palabra.length()];
                                 for (int i = 0; i < palabraOculta.length; i++) palabraOculta[i] = '_';
                             }
@@ -125,8 +125,8 @@ public class PoisonRoute {
 
                     if (!acierto) {
                         System.out.println("\u001B[31mEsta letra no esta en la palabra\u001B[0m");
-                        DatosHistoria.vidaActual -= 5;
-                        vidaPokemon = DatosHistoria.vidaActual;
+                        vidaPokemon -= 5;
+                        vidaPokemon = DatosHistoria.vidaInicial;
                         letrasFalladas += letra + " ";
                         if (vidaPokemon <= 0) {
                             vidas--;

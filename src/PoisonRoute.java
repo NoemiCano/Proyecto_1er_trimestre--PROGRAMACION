@@ -26,9 +26,10 @@ public class PoisonRoute {
         int vidas = 3;
         int vidaInicial = DatosHistoria.vidaInicial;
         DatosHistoria.vidaActual = vidaInicial;
+        DatosHistoria.vidaInicial = DatosHistoria.vidaActual;
         int vidaPokemon = DatosHistoria.vidaActual;
         String pokemon = DatosHistoria.Pokemon;
-        System.out.println(vidaPokemon+ " y " + pokemon);
+
         boolean adivinado = false;
         Random aleatorio = new Random();
 
@@ -192,5 +193,6 @@ public class PoisonRoute {
         } else {
             System.out.println("Objetos conseguidos: " + amuleto + " y " + piedraEvolucion);
         }
+        System.out.println("Tu pokemon tiene "+vidaPokemon+" de vida");
     }
 }

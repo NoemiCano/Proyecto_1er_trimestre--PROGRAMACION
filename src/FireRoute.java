@@ -3,10 +3,7 @@ import java.util.Scanner;
 
 public class FireRoute {
 
-    static int vidaSeleccionada = 0;
-
     static int seleccionado;
-
 
     public static void main(String[] args) {
 
@@ -22,9 +19,15 @@ public class FireRoute {
 
     static void opciones() {
         Scanner leer = new Scanner(System.in);
+
+        int vidaInicial = DatosHistoria.vidaInicial;
+        DatosHistoria.vidaActual = vidaInicial;
+        int vidaPokemon = DatosHistoria.vidaActual;
+        String pokemon = DatosHistoria.Pokemon;
+
         int opciones = 2;
 
-        if ("Vulpix".equals(leer.nextLine())) {
+        if (pokemon.equals("Vulpix")) {
             opciones++;
         }
 
@@ -37,7 +40,6 @@ public class FireRoute {
         System.out.println();
 
         while (true) {
-
             if (opciones == 3) {
                 System.out.println("1. Usar la linterna para ahuyentar a las sombras.");
                 System.out.println("2. Atacar a las sombras con Vulpix.");
@@ -84,7 +86,7 @@ public class FireRoute {
                     ataqueVulpix();
                 } else {
                     System.out.println("Huyes apresuradamente entre las sombras. Recibiendo daño por el camino.");
-                    vidaSeleccionada -= vidaSeleccionada / 1.5;
+                    vidaPokemon -= vidaPokemon / 1.5;
                     System.out.println(vidaSeleccionada);
                     //AQUI SE TIENE Q PONER Q TE LLEVE A LA PARTE FINAL
                 }

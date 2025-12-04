@@ -57,6 +57,7 @@ public class PoisonRoute {
             boolean acierto = false;
             System.out.println();
             System.out.println("Palabra: " + String.valueOf(palabraOculta));
+            System.out.println("\nLetras falladas: " + letrasFalladas);
             System.out.println("\u001B[32mVida del pokemon: " + vidaPokemon + ". Vidas restantes: " + vidas + "\u001B[0m");
             System.out.println();
             System.out.println("Que quieres hacer:");
@@ -104,6 +105,7 @@ public class PoisonRoute {
                     break;
 
                 case 2:
+                    System.out.println("Letras falladas: " + letrasFalladas);
                     System.out.print("Ingresa una letra: ");
                     String unaLetra = leer.next().toLowerCase();
                     if (unaLetra.length() != 1 || !unaLetra.matches("[a-z]")) {
@@ -190,6 +192,5 @@ public class PoisonRoute {
         } else {
             System.out.println("Objetos conseguidos: " + amuleto + " y " + piedraEvolucion);
         }
-        System.out.println("Tu pokemon tiene "+vidaPokemon+" de vida");
     }
 }

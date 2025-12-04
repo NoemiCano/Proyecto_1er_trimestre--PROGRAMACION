@@ -4,13 +4,17 @@ import java.util.Scanner;
 
 public class Combates {
     public static void main(String[] args) {
-        DatosHistoria.Pokemon = "Ninetales";
+        combates();
+    }
+    public static void combates() {
+        DatosHistoria.Pokemon = "Nidoking";
         String nombrePokemonElegido = DatosHistoria.Pokemon;
-        DatosHistoria.vidaActual = 160;
+        int vidaInicial = Metodos.vidaInicialPokemon();
+        DatosHistoria.vidaActual = vidaInicial;
         int vidaActual = DatosHistoria.vidaActual;
 
-        System.out.println("Tu pokemon "  + nombrePokemonElegido );
-        System.out.println("Vida Actual: " + vidaActual);
+        System.out.println("Tu pokemon "+ Metodos.blue + nombrePokemonElegido + Metodos.reset );
+        System.out.println("Vida Actual: "+ Metodos.green + vidaActual + Metodos.reset );
 
         System.out.println("Inicias el combate contra Darkrai");
         int vidaDarkrai = 180;
@@ -38,62 +42,75 @@ public class Combates {
             int escribir = sc.nextInt();
             if (escribir == 1) {
 
-                System.out.println("Has hecho " + danoHecho + " de daño");
+                System.out.println("Has hecho " + Metodos.red + danoHecho + " de daño" + Metodos.reset);
 
                 vidaActualDarkrai -= danoHecho;
 
                 if (vidaActualDarkrai > 0){
-                    System.out.println("A Darkrai le quedan " + vidaActualDarkrai + "PS");
+                    System.out.println("A Darkrai le quedan "+ Metodos.green + vidaActualDarkrai + "PS" +  Metodos.reset);
                 } else {
                     System.out.println("ENHORABUENA HAS DERROTADO A DARKRAI");
                 }
 
-                System.out.println("Te han hecho esta cantidad de daño " + danoRecibido + "PS");
+                System.out.println("Te han hecho esta cantidad de daño " + Metodos.red +  danoRecibido + "PS" + Metodos.reset);
 
                 vidaActual -=  danoRecibido;
 
                 if (vidaActual > 0){
-                    System.out.println("Te quedan " + vidaActual + "PS");
+                    System.out.println("Te quedan "+ Metodos.green + vidaActual + "PS" + Metodos.reset);
                 } else {
-                    System.out.println("QUE MAL!! HAS PERDIDO");
+                    System.out.println(Metodos.red +"QUE MAL!! HAS PERDIDO" + Metodos.reset);
                 }
             }
             if (escribir == 2) {
-                System.out.println("Has hecho " + danoHecho2 + " de daño");
+                System.out.println("Has hecho "+ Metodos.red + danoHecho2 + " de daño" + Metodos.reset);
 
                 vidaActualDarkrai -= danoHecho2;
 
-                System.out.println("A Darkrai le quedan  " + vidaActualDarkrai + "PS");
+                System.out.println("A Darkrai le quedan  " + Metodos.green + vidaActualDarkrai + "PS" + Metodos.reset);
 
-                System.out.println("Te han hecho esta cantidad de daño " + danoRecibido2 + "PS");
+                System.out.println("Te han hecho esta cantidad de daño "+ Metodos.red + danoRecibido2 + "PS" + Metodos.reset);
 
                 vidaActual -=  danoRecibido2;
 
                 if (vidaActual > 0){
-                    System.out.println("Te quedan " + vidaActual + "PS");
+                    System.out.println("Te quedan "+ Metodos.green + vidaActual + "PS" + Metodos.reset);
                 }  else {
-                    System.out.println("QUE MAL!! HAS PERDIDO");
+                    System.out.println(Metodos.red +"QUE MAL!! HAS PERDIDO" + Metodos.reset);
                 }
             }
             if (escribir == 3) {
                 System.out.println("Estos son los objetos que tienes: ");
+
+                String[] inventario = DatosHistoria.arrayInventario;
+
+
+
+
                 turno--;
             }
             if (escribir == 4) {
                 System.out.println("No puedes huir ante la presencia de Darkrai");
                 System.out.println("Como has intentado huir, Darkrai te ha atacado");
 
-                vidaActual = vidaActual - ataque1Darkrai();
+                System.out.println("Darkrai te ha quitado "+ Metodos.red + danoRecibido + "PS" + Metodos.reset);
+                vidaActual = vidaActual - danoRecibido;
 
-                System.out.println("Darkrai te ha quitado " + ataque1Darkrai() + "PS");
 
                 if (vidaActual > 0){
-                    System.out.println("Te quedan " + vidaActual + "PS");
+                    System.out.println(Metodos.green +"Te quedan " + vidaActual + "PS" + Metodos.reset);
                 }  else {
-                    System.out.println("QUE MAL!! HAS PERDIDO");
+                    System.out.println(Metodos.red + "QUE MAL!! HAS PERDIDO" + Metodos.reset);
                 }
             }
 
+            if (vidaActualDarkrai < 0){
+                Final_Neutral.finalNeutral();
+            }
+
+            if (vidaActual < 0){
+                Final_Malo.Final_Malo();
+            }
             turno++;
         }
     }

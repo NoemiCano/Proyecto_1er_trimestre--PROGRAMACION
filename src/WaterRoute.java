@@ -21,10 +21,10 @@ public class WaterRoute {
             Metodos.divider();
 
             while (opcion) {
-                Metodos.slowPrintln("Al avanzar por el camino del Lago Ilusorio, el bosque se abre y deja ver un lago de aguas tan claras que parece irreal. La superficie refleja el cielo como si fuera un espejo perfecto, aunque hay algo extraño en él… como si el reflejo tardara un segundo en seguir tus movimientos.\n" +
-                        "A un lado del lago, el agua proyecta una figura que no reconoces del todo, un reflejo que parece llamarte.\n" +
-                        "Más adelante, entre los árboles que rodean el lago, se mueven unas sombras alargadas, casi familiares, que se deslizan sin hacer ruido.\n" +
-                        "Y al observar el centro del lago, parece que podría cruzarse nadando, aunque no estás seguro de si tu Pokémon podrá seguir tu ritmo o si será demasiado peligroso.\n", 5);
+                Metodos.slowPrintln("Al avanzar por el camino del Lago Ilusorio, el bosque se abre y deja ver un lago de aguas tan claras que parece irreal. \nLa superficie refleja el cielo como si fuera un espejo perfecto, aunque hay algo extraño en él… como si el reflejo tardara un segundo en seguir tus movimientos.\n" +
+                "A un lado del lago, el agua proyecta una figura que no reconoces del todo, un reflejo que parece llamarte.\n" +
+                "Más adelante, entre los árboles que rodean el lago, se mueven unas sombras alargadas, casi familiares, que se deslizan sin hacer ruido.\n" +
+                "Y al observar el centro del lago, parece que podría cruzarse nadando, aunque no estás seguro de si tu Pokémon podrá seguir tu ritmo o si será demasiado peligroso.\n", 40);
 
                 opcion = false;
             }
@@ -65,9 +65,9 @@ public class WaterRoute {
 
         while (opcion) {
 
-            System.out.println("Sin pensarlo dos veces, decides huir. Retrocedes con cuidado por el mismo camino, evitando el contacto directo, mientras tu Pokémon sufre daño por las sombras que lo rozan. La carrera es tensa y rápida, y cada paso hace que tu corazón lata con fuerza.\n");
+            System.out.println("Sin pensarlo dos veces, decides huir. Retrocedes con cuidado por el mismo camino, evitando el contacto directo, mientras tu Pokémon sufre daño por las sombras que lo rozan. \nLa carrera es tensa y rápida, y cada paso hace que tu corazón lata con fuerza.\n");
 
-            DatosHistoria.vidaActual -= 10;
+            DatosHistoria.vidaActual -= 5;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
 
             System.out.println("Finalmente, llegas al borde del lago. El agua sigue brillando con su luz misteriosa y calma, como si nada hubiera pasado, pero el recuerdo de las sombras permanece. Ahora debes decidir tu próximo paso con cuidado.\n");
@@ -120,7 +120,7 @@ public class WaterRoute {
         }
         if(returnLake){
 
-            DatosHistoria.vidaActual -= 10;
+            DatosHistoria.vidaActual -= 5;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
 
         }
@@ -169,11 +169,11 @@ public class WaterRoute {
         opcion = false;
         }
 
-        DatosHistoria.vidaActual -= 10;
+        DatosHistoria.vidaActual -= 5;
         System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
 
         while (inventario) {
-        System.out.println(Metodos.purple + "1. Pasar corriendo através del lago");
+        System.out.println(Metodos.purple + "1. Pasar corriendo a través del lago");
         System.out.println(Metodos.blue + "2. Retroceder y volver al lago");
         System.out.println(Metodos.red + "3. Atacar a las sombras");
         System.out.println(Metodos.green + "4. Ver inventario" + Metodos.reset);
@@ -217,7 +217,7 @@ public class WaterRoute {
         opcion = false;
         }
 
-        DatosHistoria.vidaActual -= 10;
+        DatosHistoria.vidaActual -= 5;
         System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
 
         while (inventario) {
@@ -231,7 +231,7 @@ public class WaterRoute {
             System.out.println("Eliges continuar por el camino de la derecha, corres sin mirar atrás, sintiendo cómo las sombras se desvanecen poco a poco. Finalmente atraviesas el último tramo del bosque y la luz te envuelve de golpe.");
             System.out.println(Metodos.green + "Respiras aliviado. Has escapado." + Metodos.reset + "\n");
 
-            DatosHistoria.vidaActual -= 10;
+            DatosHistoria.vidaActual -= 5;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
 
             inventario = false;
@@ -249,7 +249,7 @@ public class WaterRoute {
 
                 opcion = false;
             }
-            DatosHistoria.vidaActual -= 10;
+            DatosHistoria.vidaActual -= 5;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
 
             while (inventario) {
@@ -271,7 +271,7 @@ public class WaterRoute {
                 System.out.println("Logras salir del estrecho sendero y finalmente te adentras en una pequeña pradera iluminada por la luz del sol.");
                 System.out.println(Metodos.green + "Respiras aliviado. Has dejado atrás las sombras del bosque." + Metodos.reset + "\n");
 
-                DatosHistoria.vidaActual -= 10;
+                DatosHistoria.vidaActual -= 5;
                 System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
 
                 inventario = false;
@@ -288,9 +288,9 @@ public class WaterRoute {
     static void atacar() {
         int choiceAtack;
         Metodos.divider();
-        System.out.println("Decides enfrentarte contra las sombras con tu pokemon");
+        System.out.println("Decides plantar cara a las sombras. Respiras hondo, das un paso firme hacia adelante y tu Pokémon se coloca frente a ti, \ndispuesto a protegerte. Las figuras oscuras se mueven de forma errática, como si \nestuvieran hechas de humo vivo, pero sus ojos brillan con una intención hostil innegable.");
 
-        DatosHistoria.vidaActual -= 10;
+        DatosHistoria.vidaActual -= 5;
         System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
 
         System.out.println("¿Qué ataque quieres usar?");
@@ -308,24 +308,28 @@ public class WaterRoute {
 
         if(Metodos.ataque1() >= 20 || Metodos.ataque2() >= 20){
 
-            DatosHistoria.vidaActual -= 10;
+            DatosHistoria.vidaActual -= 5;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
-            System.out.println(Metodos.green + "Consigues atacar a las sombras y huir con éxito." + Metodos.reset + "\n");
+            System.out.println(Metodos.green + "El ataque ha surtido efecto" + Metodos.reset + "\n");
+            System.out.println("Tú y tu Pokémon emprendéis la huida, dejando atrás el eco inquietante de las criaturas. A medida que avanzáis, las sombras parecen desvanecerse, incapaces de seguir vuestro ritmo después del impacto recibido.\n" +
+            "La luz al final del sendero se hace cada vez más fuerte.\n" +
+            "Los árboles se abren, el aire se vuelve cálido, y la opresión desaparece poco a poco.\n" +
+            "Finalmente, atraviesas el último tramo del bosque y un resplandor suave te envuelve por completo. La oscuridad queda atrás.");
 
-            System.out.println("Finalmente atraviesas el último tramo del bosque y la luz te envuelve de golpe.");
+            System.out.println(Metodos.green + "Has escapado" + Metodos.reset + "\n");
             cofre();
 
         }else{
-            DatosHistoria.vidaActual -= 10;
+            DatosHistoria.vidaActual -= 5;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
 
-            System.out.println("Las sombras consiguen esquivar tu ataque y te atacan de nuevo. ¡Tu pokemon vuelve a perder vida!");
-            System.out.println("Sales corriedo con él para protegerle.");
+            System.out.println("Las otras sombras se deslizan rápida y silenciosamente alrededor, esquivando gran parte del ataque. Una de ellas se estira como un tentáculo y alcanza a tu Pokémon, rozándolo con violencia. Tu compañero gime de dolor: el contacto con esas criaturas drena su energía como si absorbieran su fuerza vital.");
+            System.out.println("Entiendes que pelear directamente solo provocará que tu compañero pierda más vida. \nAgarras a tu Pokemon y huyes lo más rápido posible.");
 
             DatosHistoria.vidaActual -= 20;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
 
-            System.out.println("Finalmente atraviesas el último tramo del bosque y la luz te envuelve de golpe.");
+            System.out.println("Finalmente, atraviesas un último tramo cubierto de hojas y sientes cómo la luz del exterior envuelve tu cuerpo. \n" + Metodos.green + "La presión en el pecho desaparece. Estás fuera del bosque de sombras."  + Metodos.reset);
             cofre();
 
         }
@@ -337,7 +341,7 @@ public class WaterRoute {
         System.out.println("Decides tirarte al lago y ----");
 
         if(returnLake){
-            DatosHistoria.vidaActual -= 10;
+            DatosHistoria.vidaActual -= 5;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
         }
 

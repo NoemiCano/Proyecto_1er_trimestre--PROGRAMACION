@@ -155,7 +155,7 @@ public class Metodos {
 
                 for (int i = 0; i < inventario.length; i++) {
 
-                    if(inventario[i].equalsIgnoreCase("Poción de vida")) {
+                    if(inventario[i].equalsIgnoreCase("Poción de vida") || inventario[i].equalsIgnoreCase("Pocion de vida")) {
 
                         DatosHistoria.vidaActual += 30;
                         System.out.println("Has utilizado la poción de vida. \n");

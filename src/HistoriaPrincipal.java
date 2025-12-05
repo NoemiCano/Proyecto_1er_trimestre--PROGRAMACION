@@ -114,9 +114,10 @@ public class HistoriaPrincipal {
         Metodos.slowPrintln(Metodos.green+ "3. Revivir (revive a tu pokemon en el caso de quedarse sin vida)" + Metodos.reset, 40);
         Metodos.slowPrintln("Escribe el numero del objeto que quieras obtener ", 40);
 
+        String objetoInventario;
         while (true) {
 
-            String objetoInventario;
+
 
             objetoInventario = sc.nextLine();
 

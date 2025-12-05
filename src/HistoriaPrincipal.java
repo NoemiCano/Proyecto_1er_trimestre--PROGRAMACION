@@ -115,9 +115,8 @@ public class HistoriaPrincipal {
         Metodos.slowPrintln("Escribe el numero del objeto que quieras obtener ", 40);
 
         String objetoInventario;
+
         while (true) {
-
-
 
             objetoInventario = sc.nextLine();
 
@@ -127,7 +126,7 @@ public class HistoriaPrincipal {
 
                 Metodos.slowPrintln("Has elegido la linterna", 40);
 
-                //DatosHistoria.setObjetoInicial(objetoInventario);
+                DatosHistoria.setObjetoInicial(objetoInventario);
                 DatosHistoria.arrayInventario[0] = DatosHistoria.setObjetoInicial(objetoInventario);
                 break;
 
@@ -152,6 +151,8 @@ public class HistoriaPrincipal {
             }
 
             DatosHistoria.arrayInventario[0] = objetoInventario;
+
+//            Combates.combates();
         }
 
         // Elección de ruta

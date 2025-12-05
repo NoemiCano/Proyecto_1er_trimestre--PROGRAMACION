@@ -132,7 +132,7 @@ public class HistoriaPrincipal {
 
                 Metodos.slowPrintln("Has elegido la linterna", 40);
 
-                //DatosHistoria.setObjetoInicial(objetoInventario);
+                DatosHistoria.setObjetoInicial(objetoInventario);
                 DatosHistoria.arrayInventario[0] = DatosHistoria.setObjetoInicial(objetoInventario);
                 break;
 
@@ -162,6 +162,12 @@ public class HistoriaPrincipal {
         // Elección de ruta
 
         SelectRoutes.selectRoutes();
+
+        Combates.combates();
+
+
+
+
 
         }
     }

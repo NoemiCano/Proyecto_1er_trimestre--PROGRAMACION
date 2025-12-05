@@ -8,6 +8,15 @@ public class Combates {
     }
     public static void combates() {
 
+        Metodos.divider();
+        Metodos.slowPrintln("Tras superar las pruebas del camino, avanzas con tu compañero " + DatosHistoria.Pokemon + " por un sendero que se abre paso entre ramas retorcidas y silencios inquierantes.", 40);
+        Metodos.slowPrintln("\nEl aire parece volverse más frio a cada paso", 40);
+        Metodos.slowPrintln("\nFinalmente, el sendero termina en una amplia explanada, bañada por una luz tenue que no sabes de donde proviene.", 40);
+        Metodos.slowPrintln("\nUna figura surge entre la oscuridad, elevándose despacio, como si el propio mundo la expulsara: un Pokemon de cuerpo oscuro, mirada penetrante y presencia inquietante. Su forma parece oscilar entre lo real y lo ilusorio.", 40);
+        Metodos.slowPrintln(Metodos.purple + "\nDarkrai\n" + Metodos.reset, 40);
+
+        Metodos.slowPrintln("Sabes que este es el combate decisivo...", 40);
+
         String nombrePokemonElegido = DatosHistoria.Pokemon;
         int vidaInicial = Metodos.vidaInicialPokemon();
         DatosHistoria.vidaActual = vidaInicial;

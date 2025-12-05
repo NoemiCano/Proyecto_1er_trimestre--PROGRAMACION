@@ -149,7 +149,7 @@ public class HistoriaPrincipal {
                 objetoInventario = "Revivir";
 
                 Metodos.slowPrintln("Has elegido el revivir", 40);
-                DatosHistoria.setObjetoInicial(objetoInventario);
+                DatosHistoria.arrayInventario[0] = DatosHistoria.setObjetoInicial(objetoInventario);
                 break;
 
             } else {

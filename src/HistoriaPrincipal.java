@@ -157,30 +157,12 @@ public class HistoriaPrincipal {
 
         SelectRoutes.selectRoutes();
 
+        Combates.combates();
 
 
-        //Pruebas de Juanda para la pelea
 
 
-        System.out.println("Has elegido: " + DatosHistoria.Pokemon);
 
-        System.out.println("Quieres hacer un ataque? ");
-        int ataque = sc.nextInt();
-        if(ataque == 1) {
-            System.out.println(Metodos.ataque1());
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-}
+

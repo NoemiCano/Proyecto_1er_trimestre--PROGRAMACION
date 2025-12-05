@@ -7,11 +7,18 @@ public class Combates {
         combates();
     }
     public static void combates() {
-        DatosHistoria.Pokemon = "Nidoking";
+
         String nombrePokemonElegido = DatosHistoria.Pokemon;
         int vidaInicial = Metodos.vidaInicialPokemon();
         DatosHistoria.vidaActual = vidaInicial;
         int vidaActual = DatosHistoria.vidaActual;
+        String objetoInicial = DatosHistoria.arrayInventario[0];
+        String objetoDos =  DatosHistoria.arrayInventario[1];
+        String objetoTres = DatosHistoria.arrayInventario[2];
+        String objetoCuatro = DatosHistoria.arrayInventario[3];
+        Scanner leer = new Scanner(System.in);
+
+
 
         System.out.println("Tu pokemon "+ Metodos.blue + nombrePokemonElegido + Metodos.reset );
         System.out.println("Vida Actual: "+ Metodos.green + vidaActual + Metodos.reset );
@@ -39,8 +46,9 @@ public class Combates {
             int danoRecibido = ataque1Darkrai();
             int danoRecibido2 = ataque2Darkrai();
 
-            int escribir = sc.nextInt();
-            if (escribir == 1) {
+            String escribir = sc.nextLine();
+
+            if (escribir.equals("1")) {
 
                 System.out.println("Has hecho " + Metodos.red + danoHecho + " de daño" + Metodos.reset);
 
@@ -61,8 +69,7 @@ public class Combates {
                 } else {
                     System.out.println(Metodos.red +"QUE MAL!! HAS PERDIDO" + Metodos.reset);
                 }
-            }
-            if (escribir == 2) {
+            }else if (escribir.equals("2")) {
                 System.out.println("Has hecho "+ Metodos.red + danoHecho2 + " de daño" + Metodos.reset);
 
                 vidaActualDarkrai -= danoHecho2;
@@ -78,18 +85,57 @@ public class Combates {
                 }  else {
                     System.out.println(Metodos.red +"QUE MAL!! HAS PERDIDO" + Metodos.reset);
                 }
-            }
-            if (escribir == 3) {
-                System.out.println("Estos son los objetos que tienes: ");
+            }else if (escribir.equals("3")) {
 
-                String[] inventario = DatosHistoria.arrayInventario;
+                Random rnd = new Random();
+                int r = rnd.nextInt(1,3);
+
+                if (vidaActual != vidaInicial){
+                    if (objetoInicial.equalsIgnoreCase("Poción de vida") || objetoDos.equalsIgnoreCase("Poción de vida")) {
+
+                        String Poción = "";
+                        System.out.println("Tienes la Poción de vida en tu inventario ¿La quieres usar?");
+                        Poción = leer.nextLine();
+
+                        if (Poción.equalsIgnoreCase("Si")) {
+                            vidaActual = vidaActual + 30;
+                            System.out.println("Tu vida ahora es de : " + Metodos.green + vidaActual +  "PS" +Metodos.reset);
+                        }
+
+                    }
+                }
 
 
+
+                if (objetoCuatro != null){
+                    if (objetoCuatro.equalsIgnoreCase("Pokeball")){
+
+                        String pokeball = "";
+                        System.out.println("Tienes la Pokeball en tu inventario ¿La quieres usar?");
+                        pokeball = leer.nextLine();
+
+                        if (pokeball.equalsIgnoreCase("Si")){
+
+                            if (r == 1){
+                                Final_Bueno.Final_Bueno();
+                                break;
+                            }
+
+                            if (r == 2){
+
+                                System.out.println("!MALA SUERTE¡ NO LO HAS ATRAPADO");
+                                DatosHistoria.arrayInventario[3] = null;
+                            }
+
+                        }
+
+
+                    }
+                }
 
 
                 turno--;
-            }
-            if (escribir == 4) {
+            } else if (escribir.equals("4")) {
                 System.out.println("No puedes huir ante la presencia de Darkrai");
                 System.out.println("Como has intentado huir, Darkrai te ha atacado");
 
@@ -102,15 +148,36 @@ public class Combates {
                 }  else {
                     System.out.println(Metodos.red + "QUE MAL!! HAS PERDIDO" + Metodos.reset);
                 }
+            } else {
+                System.out.println("Introduce un comando valido");
+                turno--;
             }
 
             if (vidaActualDarkrai < 0){
                 Final_Neutral.finalNeutral();
             }
 
+
             if (vidaActual < 0){
-                Final_Malo.Final_Malo();
+                if (objetoInicial.equals("Revivir")){
+
+                    String revivir = "";
+                    System.out.println("Tienes el Revivir en tu inventario ¿Lo quieres usar?");
+                    revivir = leer.nextLine();
+
+                    if (revivir.equalsIgnoreCase("Si")){
+                       vidaInicial =  vidaInicial / 2;
+                       vidaActual = vidaInicial;
+                    } else {
+                        Final_Malo.Final_Malo();
+                    }
+                }else {
+                    Final_Malo.Final_Malo();
+                }
             }
+
+
+
             turno++;
         }
     }

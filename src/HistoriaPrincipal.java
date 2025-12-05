@@ -114,9 +114,10 @@ public class HistoriaPrincipal {
         Metodos.slowPrintln(Metodos.green+ "3. Revivir (revive a tu pokemon en el caso de quedarse sin vida)" + Metodos.reset, 40);
         Metodos.slowPrintln("Escribe el numero del objeto que quieras obtener ", 40);
 
+        String objetoInventario;
         while (true) {
 
-            String objetoInventario;
+
 
             objetoInventario = sc.nextLine();
 
@@ -150,25 +151,16 @@ public class HistoriaPrincipal {
                 Metodos.slowPrintln("Por favor, elige un número del 1 al 3", 40);
             }
 
-            DatosHistoria.arrayInventario[0] = objetoInventario;
+
         }
+        DatosHistoria.arrayInventario[0] = objetoInventario;
+
+        Combates.combates();
 
         // Elección de ruta
 
         SelectRoutes.selectRoutes();
 
-
-
-        //Pruebas de Juanda para la pelea
-
-
-        System.out.println("Has elegido: " + DatosHistoria.Pokemon);
-
-        System.out.println("Quieres hacer un ataque? ");
-        int ataque = sc.nextInt();
-        if(ataque == 1) {
-            System.out.println(Metodos.ataque1());
-        }
 
 
 

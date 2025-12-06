@@ -103,7 +103,8 @@ public class Metodos {
 
         String opcion;
 
-        Metodos.slowPrintln("Objetos en tu inventario: ", 40);
+        divider();
+        Metodos.slowPrintln("\nObjetos en tu inventario: ", 40);
 
         for (int i = 0; i < inventario.length; i++) {
             if(inventario[i]==null) {
@@ -113,8 +114,8 @@ public class Metodos {
             }
         }
 
-        Metodos.slowPrintln("¿Quieres utilizar algún objeto?", 40);
-        opcion = errores.comprobarString(sc, "Introduce Si o No");
+        Metodos.slowPrintln("\n¿Quieres utilizar algún objeto?", 40);
+        opcion = errores.comprobarString(sc, "Introduce Si o No\n");
 
         if(opcion.equalsIgnoreCase("Si")) {
             opcion = errores.comprobarString(sc, "Introduce el nombre del objeto que deseas utilizar: ");
@@ -124,16 +125,7 @@ public class Metodos {
                 for (int i = 0; i < inventario.length; i++) {
                     if(inventario[i].equalsIgnoreCase("Linterna")) {
 
-                        System.out.println("En este momento no puedes utilizar la linterna, continua avanzando en la historia. \n");
-
-                        Metodos.slowPrintln("¿Quieres seleccionar otro objeto de tu inventario?", 40);
-                        opcion = errores.comprobarString(sc, "Introduce Si o No");
-
-                        if(opcion.equalsIgnoreCase("Si")) {
-                            verInventario(inventario);
-                        }else if(opcion.equalsIgnoreCase("No")){
-                            break;
-                        }
+                        Metodos.slowPrint("En este momento no puedes utilizar la linterna, continua avanzando en la historia. \n",40);
 
                     }else if(inventario[i].equalsIgnoreCase(null)) {
 
@@ -141,15 +133,7 @@ public class Metodos {
 
                     }
                 }
-                System.out.println("No tienes linternas en tu inventario. \n");
-
-                Metodos.slowPrintln("¿Quieres seleccionar otro objeto de tu inventario?", 40);
-                opcion = errores.comprobarString(sc, "Introduce Si o No");
-
-                if(opcion.equalsIgnoreCase("Si")) {
-                    verInventario(inventario);
-                }else if(opcion.equalsIgnoreCase("No")){
-                }
+                Metodos.slowPrint("No tienes linternas en tu inventario. \n",40);
 
             }else if(opcion.equalsIgnoreCase("Poción de vida")) {
 
@@ -158,7 +142,7 @@ public class Metodos {
                     if(inventario[i].equalsIgnoreCase("Poción de vida") || inventario[i].equalsIgnoreCase("Pocion de vida")) {
 
                         DatosHistoria.vidaActual += 30;
-                        System.out.println("Has utilizado la poción de vida. \n");
+                        Metodos.slowPrint("Has utilizado la poción de vida. \n",40);
 
                         inventario[i] = null;
 
@@ -167,16 +151,7 @@ public class Metodos {
                             DatosHistoria.vidaActual  = DatosHistoria.vidaInicial;
                         }
 
-                        System.out.println("La vida de " + DatosHistoria.Pokemon + " es: " + DatosHistoria.vidaActual + "\n");
-
-                        Metodos.slowPrintln("¿Quieres seleccionar otro objeto de tu inventario?", 40);
-                        opcion = errores.comprobarString(sc, "Introduce Si o No");
-
-                        if(opcion.equalsIgnoreCase("Si")) {
-                            verInventario(inventario);
-                        }else if(opcion.equalsIgnoreCase("No")){
-                            break;
-                        }
+                        Metodos.slowPrint("La vida de " + DatosHistoria.Pokemon + " es: " + DatosHistoria.vidaActual + "\n",40);
 
                     }else if(inventario[i].equalsIgnoreCase(null)) {
 
@@ -184,24 +159,15 @@ public class Metodos {
 
                     }
                 }
-                System.out.println("No tienes pociones de vida en tu inventario. \n");
+                Metodos.slowPrint("No tienes pociones de vida en tu inventario. \n",40);
 
             }else if(opcion.equalsIgnoreCase("Revivir")) {
 
                 for (int i = 0; i < inventario.length; i++) {
 
-                    if(inventario[i].equalsIgnoreCase("Poción de vida")) {
+                    if(inventario[i].equalsIgnoreCase("Revivir")) {
 
-                        System.out.println("En este momento no puedes utilizar el revivir, tu pokemon continua con vida. \n");
-
-                        Metodos.slowPrintln("¿Quieres seleccionar otro objeto de tu inventario?", 40);
-                        opcion = errores.comprobarString(sc, "Introduce Si o No");
-
-                        if(opcion.equalsIgnoreCase("Si")) {
-                            verInventario(inventario);
-                        }else if(opcion.equalsIgnoreCase("No")){
-                            break;
-                        }
+                        Metodos.slowPrint("En este momento no puedes utilizar el revivir, tu pokemon continua con vida. \n",40);
 
                     }else if(inventario[i].equalsIgnoreCase(null)) {
 
@@ -209,48 +175,14 @@ public class Metodos {
 
                     }
                 }
-                System.out.println("No tienes revivir en tu inventario. \n");
-
-                Metodos.slowPrintln("¿Quieres seleccionar otro objeto de tu inventario?", 40);
-                opcion = errores.comprobarString(sc, "Introduce Si o No");
-
-                if(opcion.equalsIgnoreCase("Si")) {
-                    verInventario(inventario);
-                }else if(opcion.equalsIgnoreCase("No")){
-                }
+                Metodos.slowPrint("No tienes revivir en tu inventario. \n",40);
 
             }else if(opcion.equalsIgnoreCase("Piedra Agua")||opcion.equalsIgnoreCase("Piedra Fuego")||opcion.equalsIgnoreCase("Piedra Lunar")) {
 
                 Metodos.slowPrintln("No puedes utilizar el objeto elegido, prueba otra vez cuando hayas avanzado en tu aventura.", 40);
 
-                Metodos.slowPrintln("¿Quieres seleccionar otro objeto de tu inventario?", 40);
-                opcion = errores.comprobarString(sc, "Introduce Si o No");
-
-                if(opcion.equalsIgnoreCase("Si")) {
-                    verInventario(inventario);
-                }else if(opcion.equalsIgnoreCase("No")){
-                }
-
             }else {
 
-                Metodos.slowPrintln("El objeto elegido no es válido o no lo tienes en tu inventario. ", 40);
-
-                Metodos.slowPrintln("¿Quieres seleccionar otro objeto de tu inventario?", 40);
-                opcion = errores.comprobarString(sc, "Introduce Si o No");
-
-                if(opcion.equalsIgnoreCase("Si")) {
-                    verInventario(inventario);
-                }else if(opcion.equalsIgnoreCase("No")){
-                }
-
-            }
-
-            Metodos.slowPrintln("¿Quieres seleccionar otro objeto de tu inventario?", 40);
-            opcion = errores.comprobarString(sc, "Introduce Si o No");
-
-            if(opcion.equalsIgnoreCase("Si")) {
-                verInventario(inventario);
-            }else if(opcion.equalsIgnoreCase("No")){
             }
 
         }else{

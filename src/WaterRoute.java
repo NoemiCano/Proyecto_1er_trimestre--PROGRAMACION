@@ -341,7 +341,7 @@ public class WaterRoute {
             DatosHistoria.vidaActual -= 5;
             Metodos.slowPrintln("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n",30);
             Metodos.slowPrintln(Metodos.green + "El ataque ha surtido efecto" + Metodos.reset + "\n",30);
-            Metodos.slowPrintln("Tú y tu Pokémon emprendéis la huida, dejando atrás el eco inquietante de las criaturas. A medida que avanzáis, las sombras parecen desvanecerse, incapaces de seguir vuestro ritmo después del impacto recibido.\n" +
+            Metodos.slowPrintln("Tú y tu Pokémon emprendéis la huida, dejando atrás el eco inquietante de las criaturas. \nA medida que avanzáis, las sombras parecen desvanecerse, incapaces de seguir vuestro ritmo después del impacto recibido.\n" +
             "La luz al final del sendero se hace cada vez más fuerte.\n" +
             "Los árboles se abren, el aire se vuelve cálido, y la opresión desaparece poco a poco.\n" +
             "Finalmente, atraviesas el último tramo del bosque y un resplandor suave te envuelve por completo. La oscuridad queda atrás.",30);
@@ -368,18 +368,20 @@ public class WaterRoute {
 
     static void nadar(){
 
-        Metodos.slowPrintln("Corres hacia el borde del lago y te lanzas al agua. El impacto es frío, mucho más de lo que esperabas. La \ntemperatura te golpea como una cuchilla y te obliga a patalear con fuerza para mantenerte a flote. El agua \nes extrañamente pesada, como si te envolviera y quisiera atraerte hacia el fondo.",30);
+        Metodos.divider();
+
+        Metodos.slowPrintln("Corres hacia el borde del lago y te lanzas al agua. El impacto es frío, mucho más de lo que esperabas. La \ntemperatura te golpea como una cuchilla y te obliga a patalear con fuerza para mantenerte a flote. El agua \nes extrañamente pesada, como si te envolviera y quisiera atraerte hacia el fondo.\n",30);
 
         if(returnLake){
             DatosHistoria.vidaActual -= 5;
-            Metodos.slowPrintln("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset,30);
+            Metodos.slowPrintln("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n",30);
         }
 
         if(DatosHistoria.Pokemon.equalsIgnoreCase("Vulpix")){
 
-            Metodos.slowPrintln("Tu Pokémon de fuego salta detrás de ti, pero en cuanto su cuerpo toca el agua, una \nnube de vapor se eleva a su alrededor. Su energía se desploma casi al instante. \n" + Metodos.red + "¡Tu Pokémon de fuego pierde la mitad de su vida!" + Metodos.reset,30);
+            Metodos.slowPrintln("Tu Pokémon de fuego salta detrás de ti, pero en cuanto su cuerpo toca el agua, una \nnube de vapor se eleva a su alrededor. Su energía se desploma casi al instante. \n\n" + Metodos.red + "¡Tu Pokémon de fuego pierde la mitad de su vida!" + Metodos.reset +"\n",30);
             DatosHistoria.vidaActual /= 2;
-            Metodos.slowPrintln("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset,30);
+            Metodos.slowPrintln("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n",30);
             Metodos.slowPrintln("Finalmente, tras un esfuerzo que parece interminable, alcanzáis la orilla. Ambos caéis sobre la tierra mojada, \nexhaustos, pero a salvo. Tu Pokémon respira con dificultad, pero sigue consciente y fuera de peligro inmediato.",30);
 
             cofre();

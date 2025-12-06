@@ -102,91 +102,97 @@ public class Metodos {
     static void verInventario(String [] inventario) {
 
         String opcion;
+        inventario[0] = "Poción de vida";
 
-        divider();
-        Metodos.slowPrintln("Objetos en tu inventario: ", 40);
+            Metodos.slowPrintln("Objetos en tu inventario: ", 40);
 
-        for (int i = 0; i < inventario.length; i++) {
-            if(inventario[i]==null) {
+            for (int i = 0; i < inventario.length; i++) {
+                if (inventario[i] == null) {
 
-            }else {
-                Metodos.slowPrint(inventario[i] + "\n", 40);
+                } else {
+                    Metodos.slowPrint(inventario[i] + "\n", 40);
+                }
             }
-        }
 
-        Metodos.slowPrintln("\n¿Quieres utilizar algún objeto?", 40);
-        opcion = errores.comprobarString(sc, "Introduce Si o No\n");
+        Metodos.slowPrintln("¿\nQuieres utilizar algún objeto?", 40);
+        opcion = errores.comprobarString(sc, "Introduce Si o No");
 
         if(opcion.equalsIgnoreCase("Si")) {
-            opcion = errores.comprobarString(sc, "Introduce el nombre del objeto que deseas utilizar: ");
+            opcion = errores.comprobarString(sc, "\nIntroduce el nombre del objeto que deseas utilizar: ");
 
             if(opcion.equalsIgnoreCase("Linterna")) {
 
-                    if(inventario[0].equalsIgnoreCase("Linterna")) {
+                for (int i = 0; i < inventario.length; i++) {
 
-                        Metodos.slowPrint("En este momento no puedes utilizar la linterna, continua avanzando en la historia. \n",40);
-                        return;
+                    if(inventario[i]==null) {
 
-                    }else if(!inventario[0].equalsIgnoreCase("Linterna")){
+                    }else if(inventario[i].equals("Linterna")) {
 
-                        Metodos.slowPrint("No tienes linternas en tu inventario. \n",40);
+                        Metodos.slowPrintln("En este momento no puedes utilizar la linterna, continua avanzando en la historia. \n",40);
                         return;
                     }
                 }
-                Metodos.slowPrint("No tienes linternas en tu inventario. \n",40);
+
+                Metodos.slowPrintln("No tienes linternas en tu inventario. \n",40);
+                return;
 
             }else if(opcion.equalsIgnoreCase("Poción de vida") || opcion.equalsIgnoreCase("Pocion de vida")) {
 
+                for (int i = 0; i < inventario.length; i++) {
 
-                    if(inventario[0].equalsIgnoreCase("Poción de vida") || inventario[1].equalsIgnoreCase("Poción de vida")) {
+                    if(inventario[i]==null) {
+
+                    }else if(inventario[i].equalsIgnoreCase("Poción de vida")) {
 
                         DatosHistoria.vidaActual += 30;
-                        Metodos.slowPrint("Has utilizado la poción de vida. \n",40);
+                        Metodos.slowPrintln("Has utilizado la poción de vida. \n",40);
 
-                        if(inventario[0].equalsIgnoreCase("Poción de vida")) {
-
-                            inventario[0] = null;
-
-                        } else if (inventario[1].equalsIgnoreCase("Poción de vida")) {
-                            inventario[0] = null;
-                        }
+                        inventario[i] = null;
 
                         if(DatosHistoria.vidaActual > DatosHistoria.vidaInicial){
 
                             DatosHistoria.vidaActual  = DatosHistoria.vidaInicial;
                         }
 
-                        Metodos.slowPrint("La vida de " + DatosHistoria.Pokemon + " es: " + DatosHistoria.vidaActual + "\n\n",40);
-                        return;
-
-                    }else if(!inventario[0].equalsIgnoreCase("Poción de vida") || inventario[1].equalsIgnoreCase("Poción de vida")) {
-
-                        Metodos.slowPrint("No tienes pociones de vida en tu inventario. \n",40);
+                        Metodos.slowPrintln("La vida de " + DatosHistoria.Pokemon + " es: " + DatosHistoria.vidaActual + "\n",40);
                         return;
                     }
-                Metodos.slowPrint("No tienes pociones de vida en tu inventario. \n",40);
+                }
+                Metodos.slowPrintln("No tienes pociones de vida en tu inventario. \n",40);
+                return;
 
             }else if(opcion.equalsIgnoreCase("Revivir")) {
 
-                    if(inventario[0].equalsIgnoreCase("Revivir")) {
+                for (int i = 0; i < inventario.length; i++) {
 
-                        Metodos.slowPrint("En este momento no puedes utilizar el revivir, tu pokemon continua con vida. \n",40);
+                    if(inventario[i]==null) {
 
-                    }else if(!inventario[0].equalsIgnoreCase("Revivir")){
+                    }else if(inventario[i].equalsIgnoreCase("Revivir")) {
 
-                        Metodos.slowPrint("No tienes revivir en tu inventario. \n",40);
-
+                        Metodos.slowPrintln("En este momento no puedes utilizar el revivir, tu pokemon continua con vida. \n",40);
+                        return;
                     }
-                Metodos.slowPrint("No tienes revivir en tu inventario. \n",40);
+                }
+                Metodos.slowPrintln("No tienes revivir en tu inventario. \n",40);
+                return;
 
             }else if(opcion.equalsIgnoreCase("Piedra Agua")||opcion.equalsIgnoreCase("Piedra Fuego")||opcion.equalsIgnoreCase("Piedra Lunar")) {
 
-                Metodos.slowPrintln("No puedes utilizar el objeto elegido, prueba otra vez cuando hayas avanzado en tu aventura.", 40);
+                Metodos.slowPrintln("No puedes utilizar el objeto elegido, prueba otra vez cuando hayas avanzado en tu aventura.\n", 40);
+                return;
 
-            }else {
+            }else if(opcion.equalsIgnoreCase("Pokeball")) {
 
-                Metodos.slowPrintln("El objeto elegido no existe o no lo tienes en tu inventario, continua con tu aventura para encontrarlo.\n",40);
+                Metodos.slowPrintln("No puedes utilizar el objeto elegido, prueba otra vez cuando hayas avanzado en tu aventura.\n", 40);
+                return;
 
+            } else {
+                return;
             }
+
+        }else{
+            return;
+        }
+
     }
 }

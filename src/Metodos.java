@@ -104,7 +104,7 @@ public class Metodos {
         String opcion;
 
         divider();
-        Metodos.slowPrintln("\nObjetos en tu inventario: ", 40);
+        Metodos.slowPrintln("Objetos en tu inventario: ", 40);
 
         for (int i = 0; i < inventario.length; i++) {
             if(inventario[i]==null) {
@@ -122,59 +122,61 @@ public class Metodos {
 
             if(opcion.equalsIgnoreCase("Linterna")) {
 
-                for (int i = 0; i < inventario.length; i++) {
-                    if(inventario[i].equalsIgnoreCase("Linterna")) {
+                    if(inventario[0].equalsIgnoreCase("Linterna")) {
 
                         Metodos.slowPrint("En este momento no puedes utilizar la linterna, continua avanzando en la historia. \n",40);
+                        return;
 
-                    }else if(inventario[i].equalsIgnoreCase(null)) {
+                    }else if(!inventario[0].equalsIgnoreCase("Linterna")){
 
-                    }else if(!inventario[i].equalsIgnoreCase("Linterna")){
-
+                        Metodos.slowPrint("No tienes linternas en tu inventario. \n",40);
+                        return;
                     }
                 }
                 Metodos.slowPrint("No tienes linternas en tu inventario. \n",40);
 
-            }else if(opcion.equalsIgnoreCase("Poción de vida")) {
+            }else if(opcion.equalsIgnoreCase("Poción de vida") || opcion.equalsIgnoreCase("Pocion de vida")) {
 
-                for (int i = 0; i < inventario.length; i++) {
 
-                    if(inventario[i].equalsIgnoreCase("Poción de vida") || inventario[i].equalsIgnoreCase("Pocion de vida")) {
+                    if(inventario[0].equalsIgnoreCase("Poción de vida") || inventario[1].equalsIgnoreCase("Poción de vida")) {
 
                         DatosHistoria.vidaActual += 30;
                         Metodos.slowPrint("Has utilizado la poción de vida. \n",40);
 
-                        inventario[i] = null;
+                        if(inventario[0].equalsIgnoreCase("Poción de vida")) {
+
+                            inventario[0] = null;
+
+                        } else if (inventario[1].equalsIgnoreCase("Poción de vida")) {
+                            inventario[0] = null;
+                        }
 
                         if(DatosHistoria.vidaActual > DatosHistoria.vidaInicial){
 
                             DatosHistoria.vidaActual  = DatosHistoria.vidaInicial;
                         }
 
-                        Metodos.slowPrint("La vida de " + DatosHistoria.Pokemon + " es: " + DatosHistoria.vidaActual + "\n",40);
+                        Metodos.slowPrint("La vida de " + DatosHistoria.Pokemon + " es: " + DatosHistoria.vidaActual + "\n\n",40);
+                        return;
 
-                    }else if(inventario[i].equalsIgnoreCase(null)) {
+                    }else if(!inventario[0].equalsIgnoreCase("Poción de vida") || inventario[1].equalsIgnoreCase("Poción de vida")) {
 
-                    }else if(!inventario[i].equalsIgnoreCase("Poción de vida")){
-
+                        Metodos.slowPrint("No tienes pociones de vida en tu inventario. \n",40);
+                        return;
                     }
-                }
                 Metodos.slowPrint("No tienes pociones de vida en tu inventario. \n",40);
 
             }else if(opcion.equalsIgnoreCase("Revivir")) {
 
-                for (int i = 0; i < inventario.length; i++) {
-
-                    if(inventario[i].equalsIgnoreCase("Revivir")) {
+                    if(inventario[0].equalsIgnoreCase("Revivir")) {
 
                         Metodos.slowPrint("En este momento no puedes utilizar el revivir, tu pokemon continua con vida. \n",40);
 
-                    }else if(inventario[i].equalsIgnoreCase(null)) {
+                    }else if(!inventario[0].equalsIgnoreCase("Revivir")){
 
-                    }else if(!inventario[i].equalsIgnoreCase("Revivir")){
+                        Metodos.slowPrint("No tienes revivir en tu inventario. \n",40);
 
                     }
-                }
                 Metodos.slowPrint("No tienes revivir en tu inventario. \n",40);
 
             }else if(opcion.equalsIgnoreCase("Piedra Agua")||opcion.equalsIgnoreCase("Piedra Fuego")||opcion.equalsIgnoreCase("Piedra Lunar")) {
@@ -183,9 +185,8 @@ public class Metodos {
 
             }else {
 
-            }
+                Metodos.slowPrintln("El objeto elegido no existe o no lo tienes en tu inventario, continua con tu aventura para encontrarlo.\n",40);
 
-        }else{
-        }
+            }
     }
 }

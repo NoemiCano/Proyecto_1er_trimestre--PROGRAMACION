@@ -65,8 +65,6 @@ public class WaterRoute {
 
         while (opcion) {
 
-            Metodos.divider();
-
             Metodos.slowPrintln("Sin pensarlo dos veces, decides huir. Retrocedes con cuidado por el mismo camino, evitando el contacto directo, \nmientras tu Pokémon sufre daño por las sombras que lo rozan. \nLa carrera es tensa y rápida, y cada paso hace que tu corazón lata con fuerza.\n", 30);
 
             DatosHistoria.vidaActual -= 5;
@@ -297,6 +295,7 @@ public class WaterRoute {
 
     static void atacar() {
         int choiceAtack;
+        int valorAtaque = 0;
 
         String ataque1 = "";
         String ataque2 = "";
@@ -319,7 +318,7 @@ public class WaterRoute {
         }
 
         Metodos.divider();
-        Metodos.slowPrintln("Decides plantar cara a las sombras. Respiras hondo, das un paso firme hacia adelante y tu Pokémon se coloca frente a ti, \ndispuesto a protegerte. Las figuras oscuras se mueven de forma errática, como si \nestuvieran hechas de humo vivo, pero sus ojos brillan con una intención hostil innegable.",30);
+        Metodos.slowPrintln("Decides plantar cara a las sombras. Respiras hondo, das un paso firme hacia adelante y tu Pokémon se coloca frente a ti, \ndispuesto a protegerte. Las figuras oscuras se mueven de forma errática, como si \nestuvieran hechas de humo vivo, pero sus ojos brillan con una intención hostil innegable.\n",30);
 
         DatosHistoria.vidaActual -= 5;
         Metodos.slowPrintln("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n",30);
@@ -330,37 +329,37 @@ public class WaterRoute {
         choiceAtack = errores.comprobar(sc, "",1, 2);
 
         if(choiceAtack == 1){
-            Metodos.ataque1();
-            Metodos.slowPrintln("Tu pokemon ha utilizado " + ataque1 + " cantidad de daño: " + Metodos.ataque1(),30);
+            valorAtaque = Metodos.ataque1();
+            Metodos.slowPrintln("Tu pokemon ha utilizado " + ataque1 + " cantidad de daño: " + valorAtaque,30);
         }else if(choiceAtack == 2){
-            Metodos.ataque2();
-            Metodos.slowPrintln("Tu pokemon ha utilizado " + ataque2 + " cantidad de daño: " + Metodos.ataque2(),30);
+            valorAtaque = Metodos.ataque2();
+            Metodos.slowPrintln("Tu pokemon ha utilizado " + ataque2 + " cantidad de daño: " + valorAtaque,30);
         }
 
-        if(Metodos.ataque1() >= 20 || Metodos.ataque2() >= 20){
+        if(valorAtaque >= 20){
 
             DatosHistoria.vidaActual -= 5;
             Metodos.slowPrintln("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n",30);
-            System.out.println(Metodos.green + "El ataque ha surtido efecto" + Metodos.reset + "\n");
-            System.out.println("Tú y tu Pokémon emprendéis la huida, dejando atrás el eco inquietante de las criaturas. A medida que avanzáis, las sombras parecen desvanecerse, incapaces de seguir vuestro ritmo después del impacto recibido.\n" +
+            Metodos.slowPrintln(Metodos.green + "El ataque ha surtido efecto" + Metodos.reset + "\n",30);
+            Metodos.slowPrintln("Tú y tu Pokémon emprendéis la huida, dejando atrás el eco inquietante de las criaturas. A medida que avanzáis, las sombras parecen desvanecerse, incapaces de seguir vuestro ritmo después del impacto recibido.\n" +
             "La luz al final del sendero se hace cada vez más fuerte.\n" +
             "Los árboles se abren, el aire se vuelve cálido, y la opresión desaparece poco a poco.\n" +
-            "Finalmente, atraviesas el último tramo del bosque y un resplandor suave te envuelve por completo. La oscuridad queda atrás.");
+            "Finalmente, atraviesas el último tramo del bosque y un resplandor suave te envuelve por completo. La oscuridad queda atrás.",30);
 
-            System.out.println(Metodos.green + "Has escapado" + Metodos.reset + "\n");
+            Metodos.slowPrintln(Metodos.green + "Has escapado" + Metodos.reset + "\n",30);
             cofre();
 
         }else{
             DatosHistoria.vidaActual -= 5;
-            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
+            Metodos.slowPrintln("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n",30);
 
-            System.out.println("Las otras sombras se deslizan rápida y silenciosamente alrededor, esquivando gran parte del ataque. Una de ellas se estira como un tentáculo y alcanza a tu Pokémon, rozándolo con violencia. Tu compañero gime de dolor: el contacto con esas criaturas drena su energía como si absorbieran su fuerza vital.");
-            System.out.println("Entiendes que pelear directamente solo provocará que tu compañero pierda más vida. \nAgarras a tu Pokemon y huyes lo más rápido posible.");
+            Metodos.slowPrintln("Las otras sombras se deslizan rápida y silenciosamente alrededor, esquivando gran parte del ataque. \nUna de ellas se estira como un tentáculo y alcanza a tu Pokémon, rozándolo con violencia. \nTu compañero gime de dolor: el contacto con esas criaturas drena su energía como si absorbieran su fuerza vital.\n",30);
+            Metodos.slowPrintln("Entiendes que pelear directamente solo provocará que tu compañero pierda más vida. \nAgarras a tu Pokemon y huyes lo más rápido posible.",30);
 
             DatosHistoria.vidaActual -= 20;
-            System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n");
+            Metodos.slowPrintln("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset + "\n",30);
 
-            System.out.println("Finalmente, atraviesas un último tramo cubierto de hojas y sientes cómo la luz del exterior envuelve tu cuerpo. \n" + Metodos.green + "La presión en el pecho desaparece. Estás fuera del bosque de sombras."  + Metodos.reset);
+            Metodos.slowPrintln("Finalmente, atraviesas un último tramo cubierto de hojas y sientes cómo la luz del exterior envuelve tu cuerpo. \n" + Metodos.green + "La presión en el pecho desaparece. Estás fuera del bosque de sombras."  + Metodos.reset,30);
             cofre();
 
         }

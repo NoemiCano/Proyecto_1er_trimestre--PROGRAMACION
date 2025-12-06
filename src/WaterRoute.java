@@ -12,6 +12,8 @@ public class WaterRoute {
     }
     public static void waterRoute() {
 
+
+        DatosHistoria.Pokemon = "Staryu";
         boolean opcion = true;
         boolean inventario = true;
 
@@ -399,7 +401,7 @@ public class WaterRoute {
             DatosHistoria.arrayInventario[1] = "Poción de vida";
             DatosHistoria.arrayInventario[2] = "Piedra Agua";
 
-            if(pokeball >= 50){
+            if(pokeball >= 10){
                 System.out.println("Además, tienes suerte y encuentras una pokeball ¿Te servirá para algo en el resto de tu aventura?");
 
                 DatosHistoria.arrayInventario[3] = "Pokeball";
@@ -444,5 +446,6 @@ public class WaterRoute {
         }else if(choiceTreasure.equalsIgnoreCase("No")){
             cofreComprobar();
         }
+
     }
 }

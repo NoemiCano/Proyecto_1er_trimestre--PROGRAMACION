@@ -157,6 +157,7 @@ public class FireRoute {
     }
 
     static void recompensaAleatorio() {
+        Scanner sc = new Scanner(System.in);
         Random aleatorio = new Random();
         boolean pokeballAleatoria = aleatorio.nextBoolean();
 
@@ -169,13 +170,6 @@ public class FireRoute {
         } else {
             System.out.println("Objetos conseguidos: " + DatosHistoria.arrayInventario[1] + " y " + DatosHistoria.arrayInventario[2]);
         }
-        finalRuta();
-    }
-
-    static void finalRuta() {
-        System.out.println();
-        mostrarLento("Has llegado al final de la ruta...", 30);
-        mostrarLento("Las sombras se desvanecen mientras avanzas.", 30);
-        mostrarLento("Pero una presencia oscura te observa...", 30);
+        Evolucion.evolucionPokemon(sc);
     }
 }

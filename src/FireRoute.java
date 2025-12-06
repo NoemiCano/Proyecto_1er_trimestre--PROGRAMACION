@@ -3,24 +3,28 @@ import java.util.Scanner;
 
 public class FireRoute {
 
-    static int vidaSeleccionada = 0;
+    public static void main(String[] args) {
+        inicioFireRoute();
 
-    static int seleccionado;
+    }
 
     static void inicioFireRoute() {
-        main(null);
+        int selector = 0;
+        opciones(selector);
+
     }
 
-    public static void main(String[] args) {
-        opciones();
-    }
-
-    static void opciones() {
+    static void opciones(int selector) {
         Scanner leer = new Scanner(System.in);
-        boolean linterna = true;
+
+        int vidaInicial = DatosHistoria.vidaInicial;
+        DatosHistoria.vidaActual = vidaInicial;
+        int vidaPokemon = DatosHistoria.vidaActual;
+        String pokemon = DatosHistoria.Pokemon;
+
         int opciones = 2;
 
-        if ("Vulpix".equals(leer.nextLine())) {
+        if (pokemon.equals("Vulpix")) {
             opciones++;
         }
 
@@ -33,7 +37,6 @@ public class FireRoute {
         System.out.println();
 
         while (true) {
-
             if (opciones == 3) {
                 System.out.println("1. Usar la linterna para ahuyentar a las sombras.");
                 System.out.println("2. Atacar a las sombras con Vulpix.");
@@ -45,117 +48,86 @@ public class FireRoute {
 
             System.out.print("Elige una opción: ");
 
-            if (leer.hasNextInt()) {
-                seleccionado = leer.nextInt();
+            while (true) {
+                if (leer.hasNextInt()) {
+                    selector = leer.nextInt();
 
-                if (seleccionado >= 1 && seleccionado <= opciones) {
-                    break;
+                    if (selector >= 1 && selector <= opciones) {
+                        break;
+                    } else {
+                        System.out.println("Error: Debes elegir un número entre 1 y " + opciones + ".");
+                    }
+
                 } else {
-                    System.out.println("Error: Debes elegir un número entre 1 y " + opciones + ".");
+                    System.out.println("Error: Debes ingresar solo números.");
+                    leer.next();
                 }
+                System.out.println();
+                switch (selector) {
+                    case 1:
+                        if (DatosHistoria.arrayInventario[0] == "Linterna") {
+                            System.out.println("Has usado la linterna.");
+                            System.out.println("Haciendo que las sombras se dispersen.");
+                            recompensa();
+                            break;
+                        } else {
+                            System.out.println("No tienes la linterna en tu inventario");
+                            return;
+                        }
 
-            } else {
-                System.out.println("Error: Debes ingresar solo números.");
-                leer.next();
+                    case 2:
+                        if (opciones == 3) {
+                            System.out.println("Que ataque quieres que Vulpix realice: ");
+                            System.out.println("1. Llamarada");
+                            System.out.println("2. Placaje");
+                            ataqueVulpix(vidaPokemon);
+                        } else {
+                            System.out.println("Huyes apresuradamente entre las sombras. Recibiendo daño por el camino.");
+                            vidaPokemon -= vidaPokemon / 1.5;
+                            System.out.println("La vida de tu pokemon es: " + vidaPokemon);
+                            //AQUI SE TIENE Q PONER Q TE LLEVE A LA PARTE FINAL
+                        }
+                        break;
+
+                    case 3:
+                        System.out.println("Huyes apresuradamente entre las sombras. Recibiendo daño por el camino.");
+                        vidaPokemon -= vidaPokemon / 1.5;
+                        System.out.println("La vida de tu pokemon es: " + vidaPokemon);
+                        //AQUI SE TIENE Q PONER Q TE LLEVE A LA PARTE FINAL
+                        break;
+                }
+                System.out.println();
             }
         }
-        System.out.println();
-
-        switch (seleccionado) {
-            case 1:
-                if (linterna) {
-                    System.out.println("Has usado la linterna. Las sombras se dispersan.");
-                    recompensa();
-                    break;
-                } else {
-                    System.out.println("No tienes la linterna en tu inventario");
-                }
-                break;
-
-            case 2:
-                if (opciones == 3) {
-                    System.out.println("Que ataque quieres que Vulpix realice: ");
-                    System.out.println("1. Llamarada");
-                    System.out.println("2. Placaje");
-                    ataqueVulpix();
-                } else {
-                    System.out.println("Huyes apresuradamente entre las sombras. Recibiendo daño por el camino.");
-                    vidaSeleccionada -= vidaSeleccionada / 1.5;
-                    System.out.println(vidaSeleccionada);
-                    //AQUI SE TIENE Q PONER Q TE LLEVE A LA PARTE FINAL
-                }
-                break;
-
-            case 3:
-                System.out.println("Escapas del lugar recibiendo daño.");
-                break;
-        }
-        System.out.println();
     }
 
-    static int ataqueVulpix() {
+    static int ataqueVulpix(int vidaPokemon) {
         Scanner leer = new Scanner(System.in);
         int ataqueElegido = leer.nextInt();
+        System.out.println("\nVulpix tiene: " + vidaPokemon + " de vida.");
+        while (vidaPokemon > 0) {
+            switch (ataqueElegido) {
+                case 1:
+                    System.out.println("Vulpix usa Llamarada");
+                    System.out.println("Escapas exitosamente de la situacion");
+                    recompensa();
+                    break;
+                case 2:
+                    System.out.println("Vulpix usa Placaje");
+                    Random aleatorio = new Random();
+                    boolean recibeDaño = aleatorio.nextBoolean();
 
-        switch (ataqueElegido) {
-            case 1:
-                System.out.println("Vulpix usa Llamarada");
-                System.out.println("Escapas exitosamente de la situacion");
-                recompensa();
-                break;
-            case 2:
-                System.out.println("Vulpix usa Placaje");
-                Random aleatorio = new Random();
-                boolean recibeDaño = aleatorio.nextBoolean();
-
-                if (recibeDaño) {
-                    System.out.println("Al usar Placaje vulpix recibe daño de una sombra");
-                    vidaSeleccionada -= vidaSeleccionada - 15;
-                    System.out.println(vidaSeleccionada);
-                } else {
-                    System.out.println("Escapas exitosamente de la situacion ");
-                }
-                recompensa();
+                    if (recibeDaño) {
+                        System.out.println("Al usar Placaje vulpix recibe daño de una sombra");
+                        vidaPokemon -= vidaPokemon - 15;
+                        return ataqueElegido;
+                    } else {
+                        System.out.println("Escapas exitosamente de la situacion ");
+                    }
+                    recompensa();
+            }
         }
         return ataqueElegido;
-    }
-
-    public static int vidaVulpix() {
-        int vidaVulpix = 100;
-        String pokemon = "Vulpix";
-        String ataqueUno = "Llamarada";
-        String ataqueDos = "Placaje";
-        System.out.println("Vida de Vulpix: " + vidaVulpix);
-        System.out.println("El primer ataque de Vulpix es: " + ataqueUno + " Hace un rango de daño de 0 a 60");
-        System.out.println("El segundo ataque de Vulpix es: " + ataqueDos + " Hace un rango de daño de 0 a 40");
-        return vidaVulpix;
-    }
-
-    public static int vidaStaryu() {
-        int vidaStaryu = 110;
-        String pokemon = "Staryu";
-        String ataqueUno = "Hidropulso";
-        String ataqueDos = "Placaje";
-        System.out.println("Vida de Staryu: " + vidaStaryu);
-        System.out.println("El primer ataque de Staryu es: " + ataqueUno + " Hace un rango de daño de 0 a 60");
-        System.out.println("El segundo ataque de Staryu es: " + ataqueDos + " Hace un rango de daño de 0 a 40");
-        return vidaStaryu;
-    }
-
-    public static int vidaNidoran() {
-        int vidaNidoran = 120;
-        String pokemon = "Nidoran";
-        String ataqueUno = "Onda toxica";
-        String ataqueDos = "Placaje";
-        System.out.println("Vida de Nidoran: " + vidaNidoran);
-        System.out.println("El primer ataque de Nidoran es: " + ataqueUno + " Hace un rango de daño de 0 a 60");
-        System.out.println("El segundo ataque de Nidoran es: " + ataqueDos + " Hace un rango de daño de 0 a 40");
-        return vidaNidoran;
-    }
-
-    public static int vidaDarkrai() {
-        int vidaDarkrai = 180;
-        return vidaDarkrai;
     }
 
     static void mostrarLento(String texto, int ms) {
@@ -185,25 +157,19 @@ public class FireRoute {
     }
 
     static void recompensaAleatorio() {
+        Scanner sc = new Scanner(System.in);
         Random aleatorio = new Random();
         boolean pokeballAleatoria = aleatorio.nextBoolean();
 
-        String pocionCurativa = "Pocion de vida";
-        String piedraEvolucion = "Piedra Fuego";
-        String pokeball = "Pokeball";
+        DatosHistoria.arrayInventario[1] = "Pocion de vida";
+        DatosHistoria.arrayInventario[2] = "Piedra Fuego";
+        DatosHistoria.arrayInventario[3] = "Pokeball";
 
         if (pokeballAleatoria == true) {
-            System.out.println("Objetos conseguidos: " + pocionCurativa + ", " + piedraEvolucion + " y " + pokeball);
+            System.out.println("Objetos conseguidos: " + DatosHistoria.arrayInventario[1] + ", " + DatosHistoria.arrayInventario[2] + " y " + DatosHistoria.arrayInventario[3]);
         } else {
-            System.out.println("Objetos conseguidos: " + pocionCurativa + " y " + piedraEvolucion);
+            System.out.println("Objetos conseguidos: " + DatosHistoria.arrayInventario[1] + " y " + DatosHistoria.arrayInventario[2]);
         }
-        finalRuta();
-    }
-
-    static void finalRuta() {
-        System.out.println();
-        mostrarLento("Has llegado al final de la ruta...", 30);
-        mostrarLento("Las sombras se desvanecen mientras avanzas.", 30);
-        mostrarLento("Pero una presencia oscura te observa...", 30);
+        Evolucion.evolucionPokemon(sc);
     }
 }

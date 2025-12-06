@@ -10,16 +10,20 @@ public class HistoriaPrincipal {
                         '-----------------------------'
                 """;
 
-        Metodos.slowPrint(ascii, 20);
+        Metodos.slowPrint(Metodos.blue + ascii + Metodos.reset, 20);
+
         String nombreUsuario = Metodos.nombreUsuario();
         DatosHistoria.setNombreUsuario(nombreUsuario);
+
         Metodos.slowPrintln("Hola, " + DatosHistoria.nombreUsuario, 40);
 
         //Inicio de la aventura
 
         while(true) {
+
             Metodos.slowPrintln("¿Quieres iniciar la aventura? Si/No", 40);
             String decision = sc.nextLine();
+
             if (decision.equalsIgnoreCase("si")) {
                 Metodos.slowPrintln("Despiertas en tu habitación sin recuerdos claros, aunque todo te resulta familiar... sientes que algo no va bien...", 40);
                 Metodos.slowPrintln("Pero recuerdas que hoy debes ir con el profesor Oak a elegir tu primer pokemon. Asi que te levantas de la cama y vas hacia el centro pokemon de tu ciudad", 40);
@@ -29,8 +33,10 @@ public class HistoriaPrincipal {
             if (decision.equalsIgnoreCase("no")) {
                 Metodos.slowPrintln("Juego terminado. ¡Hasta pronto!", 40);
                 System.exit(0);
+
             } else {
-                Metodos.slowPrintln("Por favor, escribe 'si' o 'no'.", 40);
+
+                Metodos.slowPrintln(Metodos.red + "Por favor, escribe 'si' o 'no'." + Metodos.reset, 40);
             }
         }
 
@@ -61,7 +67,7 @@ public class HistoriaPrincipal {
                 ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
                 vidaInicio = Metodos.vidaInicialPokemon();
 
-                Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
+                Metodos.slowPrintln(Metodos.red + "\nHas elegido a " + pokemon + ". Y ahora te acompañará durante tu aventura." + Metodos.reset, 40);
                 Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
                 DatosHistoria.vidaInicial=vidaInicio;
@@ -75,7 +81,7 @@ public class HistoriaPrincipal {
                 ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
                 vidaInicio = Metodos.vidaInicialPokemon();
 
-                Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
+                Metodos.slowPrintln(Metodos.blue + "\nHas elegido a " + pokemon + ". Y ahora te acompañará durante tu aventura." + Metodos.reset, 40);
                 Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
                 DatosHistoria.vidaInicial=vidaInicio;
@@ -89,7 +95,7 @@ public class HistoriaPrincipal {
                 ataqueDos = "'Placaje' que tiene un rango de daño de 0 a 40";
                 vidaInicio = Metodos.vidaInicialPokemon();
 
-                Metodos.slowPrintln("Has elegido a " + pokemon + ". \nY ahora te acompañará durante tu aventura.", 40);
+                Metodos.slowPrintln(Metodos.purple + "\nHas elegido a " + pokemon + ". Y ahora te acompañará durante tu aventura." + Metodos.reset, 40);
                 Metodos.slowPrintln("Su vida es de " + vidaInicio + " y sus ataques son " + ataqueUno + " y " + ataqueDos, 40);
                 DatosHistoria.setPokemon(pokemon);
                 DatosHistoria.vidaInicial=vidaInicio;
@@ -97,7 +103,7 @@ public class HistoriaPrincipal {
                 break;
 
             } else {
-                Metodos.slowPrintln("Por favor, escribe el nombre del pokemon que deseas seleccionar: Vulpix, Staryu o Nidoran.", 40);
+                Metodos.slowPrintln(Metodos.red + "Por favor, escribe el nombre del pokemon que deseas seleccionar: Vulpix, Staryu o Nidoran." + Metodos.reset, 40);
             }
         }
 
@@ -126,7 +132,7 @@ public class HistoriaPrincipal {
 
                 Metodos.slowPrintln("Has elegido la linterna", 40);
 
-                //DatosHistoria.setObjetoInicial(objetoInventario);
+                DatosHistoria.setObjetoInicial(objetoInventario);
                 DatosHistoria.arrayInventario[0] = DatosHistoria.setObjetoInicial(objetoInventario);
                 break;
 
@@ -143,7 +149,7 @@ public class HistoriaPrincipal {
                 objetoInventario = "Revivir";
 
                 Metodos.slowPrintln("Has elegido el revivir", 40);
-                DatosHistoria.setObjetoInicial(objetoInventario);
+                DatosHistoria.arrayInventario[0] = DatosHistoria.setObjetoInicial(objetoInventario);
                 break;
 
             } else {
@@ -157,30 +163,11 @@ public class HistoriaPrincipal {
 
         SelectRoutes.selectRoutes();
 
+        Combates.combates();
 
 
-        //Pruebas de Juanda para la pelea
 
 
-        System.out.println("Has elegido: " + DatosHistoria.Pokemon);
 
-        System.out.println("Quieres hacer un ataque? ");
-        int ataque = sc.nextInt();
-        if(ataque == 1) {
-            System.out.println(Metodos.ataque1());
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-}

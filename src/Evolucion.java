@@ -25,7 +25,10 @@ public class Evolucion {
     public static void evolucionPokemon(Scanner sc) {
 
         int indicePiedra = buscarPiedra();
-        if (indicePiedra == -1) return;
+        if (indicePiedra == -1) {
+            Metodos.slowPrintln("Lamentablemente no sirve para evolucionar a tu pokemon. Debes seguir tu camino", 40);
+            return;
+        }
 
         String piedra = DatosHistoria.arrayInventario[indicePiedra];
         String pokemon = DatosHistoria.Pokemon;

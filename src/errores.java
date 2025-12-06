@@ -17,7 +17,7 @@ public class errores {
                 return valor;
 
             } else {
-                Metodos.slowPrintln( Metodos.red + "Entrada inválida: introduce un número entero." + Metodos.reset, 40);
+                Metodos.slowPrintln("Entrada inválida: introduce un número entero.", 40);
                 sc.nextLine();
             }
         }
@@ -30,7 +30,7 @@ public class errores {
 
             if (valor < min || valor > max) {
 
-                Metodos.slowPrintln(Metodos.red + "Valor fuera de rango. Debe estar entre " + min + " y " + max + "." + Metodos.reset, 40);
+                Metodos.slowPrintln("Valor fuera de rango. Debe estar entre " + min + " y " + max + ".", 40);
 
             } else {
                 return valor;
@@ -49,7 +49,7 @@ public class errores {
                 return valor;
 
             } else {
-                Metodos.slowPrintln(Metodos.red + "Entrada inválida: introduce un número (puede tener decimales)." + Metodos.reset, 40);
+                Metodos.slowPrintln("Entrada inválida: introduce un número (puede tener decimales).", 40);
                 sc.nextLine();
             }
         }
@@ -61,7 +61,7 @@ public class errores {
 
             if (valor < min || valor > max) {
 
-                Metodos.slowPrintln(Metodos.red + "Valor fuera de rango. Debe estar entre " + min + " y " + max + "." + Metodos.reset, 40);
+                Metodos.slowPrintln("Valor fuera de rango. Debe estar entre " + min + " y " + max + ".", 40);
 
             } else {
                 return valor;
@@ -77,7 +77,7 @@ public class errores {
 
             if (line.trim().isEmpty()) {
 
-                Metodos.slowPrintln(Metodos.red + "Entrada vacía. Introduce algún texto." + Metodos.reset, 40);
+                Metodos.slowPrintln("Entrada vacía. Introduce algún texto.", 40);
 
             } else {
                 return line;
@@ -90,4 +90,5 @@ public class errores {
         Metodos.slowPrint(prompt, 40);
         return sc.nextLine();
     }
+
 }

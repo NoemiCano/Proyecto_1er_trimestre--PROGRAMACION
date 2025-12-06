@@ -24,10 +24,11 @@ public class PoisonRoute {
 
     static void ahorcado() {
         int vidas = 3;
-        DatosHistoria.vidaInicial = DatosHistoria.vidaActual;
+        int vidaInicial = DatosHistoria.vidaInicial;
+        DatosHistoria.vidaActual = vidaInicial;
         int vidaPokemon = DatosHistoria.vidaActual;
         String pokemon = DatosHistoria.Pokemon;
-        System.out.println(vidaPokemon+ " y " + pokemon);
+
         boolean adivinado = false;
         Random aleatorio = new Random();
 
@@ -56,6 +57,7 @@ public class PoisonRoute {
             boolean acierto = false;
             System.out.println();
             System.out.println("Palabra: " + String.valueOf(palabraOculta));
+            System.out.println("\nLetras falladas: " + letrasFalladas);
             System.out.println("\u001B[32mVida del pokemon: " + vidaPokemon + ". Vidas restantes: " + vidas + "\u001B[0m");
             System.out.println();
             System.out.println("Que quieres hacer:");
@@ -89,12 +91,12 @@ public class PoisonRoute {
                         adivinado = true;
                     } else {
                         System.out.println("\u001B[31mINCORRECTO\u001B[0m");
-                        DatosHistoria.vidaActual -= 20;
+                        vidaPokemon -= 20;
                         if (vidaPokemon <= 0) {
                             vidas--;
                             if (vidas > 0) {
                                 System.out.println("\u001B[31mPS DE TU POKEMON AGOTADOS\u001B[0m");
-                                DatosHistoria.vidaActual = DatosHistoria.vidaInicial;
+                                vidaPokemon = DatosHistoria.vidaInicial;
                                 palabraOculta = new char[palabra.length()];
                                 for (int i = 0; i < palabraOculta.length; i++) palabraOculta[i] = '_';
                             }
@@ -103,6 +105,7 @@ public class PoisonRoute {
                     break;
 
                 case 2:
+                    System.out.println("Letras falladas: " + letrasFalladas);
                     System.out.print("Ingresa una letra: ");
                     String unaLetra = leer.next().toLowerCase();
                     if (unaLetra.length() != 1 || !unaLetra.matches("[a-z]")) {
@@ -179,17 +182,18 @@ public class PoisonRoute {
     }
 
     static void recompensaAleatorio(int vidaPokemon) {
+        Scanner sc = new Scanner(System.in);
         Random aleatorio = new Random();
         boolean pokeballAleatoria = aleatorio.nextBoolean();
-        String amuleto = "Amuleto de protección";
-        String piedraEvolucion = "Piedra Lunar";
-        String pokeball = "Pokeball";
+        DatosHistoria.arrayInventario[1] = "Pocion de vida";
+        DatosHistoria.arrayInventario[2] = "Piedra Lunar";
+        DatosHistoria.arrayInventario[3] = "Pokeball";
 
-        if (pokeballAleatoria) {
-            System.out.println("Objetos conseguidos: " + amuleto + ", " + piedraEvolucion + " y " + pokeball);
+        if (pokeballAleatoria == true) {
+            System.out.println("Objetos conseguidos: " + DatosHistoria.arrayInventario[1] + ", " + DatosHistoria.arrayInventario[2] + " y " + DatosHistoria.arrayInventario[3]);
         } else {
-            System.out.println("Objetos conseguidos: " + amuleto + " y " + piedraEvolucion);
+            System.out.println("Objetos conseguidos: " + DatosHistoria.arrayInventario[1] + " y " + DatosHistoria.arrayInventario[2]);
         }
-        System.out.println("Tu pokemon tiene "+vidaPokemon+" de vida");
+        Evolucion.evolucionPokemon(sc);
     }
 }

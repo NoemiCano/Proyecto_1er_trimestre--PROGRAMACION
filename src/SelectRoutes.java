@@ -21,8 +21,7 @@ public class SelectRoutes {
 
         System.out.println("El primer camino está envuelto en una penumbra inquietante. Los árboles son altos, tan altos que sus copas se entrelazan formando un techo oscuro \nque apenas deja pasar la luz. De entre sus sombras parece moverse algo, aunque cada vez que intentas fijar la vista, desaparece. \nUna brisa fría recorre este sendero, como si te invitara… o te advirtiera.\n");
         System.out.println("El segundo camino está bordeado por un brillo suave y azulado. A lo lejos se escucha el murmullo de agua, y una neblina ligera flota sobre un lago \nque parece reflejar más de lo que muestra. La superficie del agua es tan tranquila que parece un espejo perfecto, pero por alguna razón, \nno puedes evitar sentir que algo se oculta bajo esa calma ilusoria.\n");
-        System.out.println("El tercer camino resplandece con un resplandor extraño. No es luz natural, ni parece provenir del sol. Más bien, es como si el aire mismo estuviera distorsionado. \nEntre los árboles se ven destellos, como si espejos invisibles doblaran la realidad. Cada paso que das cerca hace que la luz cambie de forma, \n2" +
-                "generando ilusiones que pueden confundirte… o guiarte.\n");
+        System.out.println("El tercer camino resplandece con un resplandor extraño. No es luz natural, ni parece provenir del sol. Más bien, es como si el aire mismo estuviera distorsionado. \nEntre los árboles se ven destellos, como si espejos invisibles doblaran la realidad. Cada paso que das cerca hace que la luz cambie de forma, \ngenerando ilusiones que pueden confundirte… o guiarte.\n");
 
         }
 

@@ -20,39 +20,7 @@ En este proyecto hemos desarrollado una aventura narrativa interactiva que se ej
 1. Abre el proyecto en tu IDE preferido
 2. Clonar el repositorio con el comando: 
 git clone https://github.com/NoemiCano/Proyecto_1er_trimestre--PROGRAMACION.git
-3. Ejecuta la clase "Main" que se encuentra en el package "app"
-
-## Estructura
-src/
-└── proyecto/                   (tu package raíz, elige nombre del proyecto)
-├── app/
-│    └── Main.java
-│
-├── historia/
-│    ├── HistoriaPrincipal.java
-│    ├── DatosHistoria.java
-│    └── SelectRoutes.java
-│
-├── rutas/
-│    ├── FireRoute.java
-│    ├── WaterRoute.java
-│    ├── PoisonRoute.java
-│    └── Pruebas.java     (si son pruebas de rutas; si son test, se sacarían fuera)
-│
-├── combates/
-│    └── Combates.java
-│
-├── finales/
-│    ├── Final_Bueno.java
-│    ├── Final_Neutral.java
-│    └── Final_Mali.java
-│
-├── evolucion/
-│    └── Evolucion.java
-│
-└── utils/
-├── Metodos.java
-└── errores.java
+3. Ejecuta la clase "Main"
 
 
 ## Requisitos

@@ -16,7 +16,6 @@ public class Combates {
         Metodos.slowPrintln(Metodos.purple + "\nDarkrai\n" + Metodos.reset, 40);
 
         Metodos.slowPrintln("Sabes que este es el combate decisivo...", 40);
-
         String nombrePokemonElegido = DatosHistoria.Pokemon;
         int vidaInicial = Metodos.vidaInicialPokemon();
         DatosHistoria.vidaActual = vidaInicial;

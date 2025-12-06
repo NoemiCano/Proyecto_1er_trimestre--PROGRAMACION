@@ -102,7 +102,6 @@ public class Metodos {
     static void verInventario(String [] inventario) {
 
         String opcion;
-        inventario[0] = "Poción de vida";
 
             Metodos.slowPrintln("Objetos en tu inventario: ", 40);
 
@@ -114,8 +113,8 @@ public class Metodos {
                 }
             }
 
-        Metodos.slowPrintln("¿\nQuieres utilizar algún objeto?", 40);
-        opcion = errores.comprobarString(sc, "Introduce Si o No");
+        Metodos.slowPrintln("¿Quieres utilizar algún objeto?", 40);
+        opcion = errores.comprobarString(sc, "Introduce Si o No\n");
 
         if(opcion.equalsIgnoreCase("Si")) {
             opcion = errores.comprobarString(sc, "\nIntroduce el nombre del objeto que deseas utilizar: ");

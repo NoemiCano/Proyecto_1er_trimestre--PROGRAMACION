@@ -26,7 +26,6 @@ public class Evolucion {
 
         int indicePiedra = buscarPiedra();
         if (indicePiedra == -1) {
-            Metodos.slowPrintln("Lamentablemente no sirve para evolucionar a tu pokemon. Debes seguir tu camino", 40);
             return;
         }
 
@@ -42,6 +41,8 @@ public class Evolucion {
         } else if (piedra.equalsIgnoreCase("Piedra Agua") && pokemon.equalsIgnoreCase("Staryu")) {
             preguntarEvolucion(sc, "Starmie");
 
+        } else {
+            Metodos.slowPrintln("Lamentablemente no sirve para evolucionar a tu pokemon. Debes seguir tu camino", 40);
         }
     }
 

@@ -181,17 +181,18 @@ public class PoisonRoute {
     }
 
     static void recompensaAleatorio(int vidaPokemon) {
+        Scanner sc = new Scanner(System.in);
         Random aleatorio = new Random();
         boolean pokeballAleatoria = aleatorio.nextBoolean();
-        String amuleto = "Amuleto de protección";
-        String piedraEvolucion = "Piedra Lunar";
-        String pokeball = "Pokeball";
+        DatosHistoria.arrayInventario[1] = "Pocion de vida";
+        DatosHistoria.arrayInventario[2] = "Piedra Lunar";
+        DatosHistoria.arrayInventario[3] = "Pokeball";
 
-        if (pokeballAleatoria) {
-            System.out.println("Objetos conseguidos: " + amuleto + ", " + piedraEvolucion + " y " + pokeball);
+        if (pokeballAleatoria == true) {
+            System.out.println("Objetos conseguidos: " + DatosHistoria.arrayInventario[1] + ", " + DatosHistoria.arrayInventario[2] + " y " + DatosHistoria.arrayInventario[3]);
         } else {
-            System.out.println("Objetos conseguidos: " + amuleto + " y " + piedraEvolucion);
+            System.out.println("Objetos conseguidos: " + DatosHistoria.arrayInventario[1] + " y " + DatosHistoria.arrayInventario[2]);
         }
-        System.out.println("Tu pokemon tiene "+vidaPokemon+" de vida");
+        Evolucion.evolucionPokemon(sc);
     }
 }

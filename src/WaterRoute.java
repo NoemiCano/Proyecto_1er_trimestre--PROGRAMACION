@@ -338,7 +338,7 @@ public class WaterRoute {
 
     static void nadar(){
 
-        System.out.println("Decides tirarte al lago y ----");
+        System.out.println("Corres hacia el borde del lago y te lanzas al agua. El impacto es frío, mucho más de lo que esperabas. La \ntemperatura te golpea como una cuchilla y te obliga a patalear con fuerza para mantenerte a flote. El agua \nes extrañamente pesada, como si te envolviera y quisiera atraerte hacia el fondo.");
 
         if(returnLake){
             DatosHistoria.vidaActual -= 5;
@@ -347,25 +347,27 @@ public class WaterRoute {
 
         if(DatosHistoria.Pokemon.equalsIgnoreCase("Vulpix")){
 
-            System.out.println("Tu pokemon es de fuego ¡Pierde la mitad de su vida!");
+            System.out.println("Tu Pokémon de fuego salta detrás de ti, pero en cuanto su cuerpo toca el agua, una \nnube de vapor se eleva a su alrededor. Su energía se desploma casi al instante. \n" + Metodos.red + "¡Tu Pokémon de fuego pierde la mitad de su vida!" + Metodos.reset);
             DatosHistoria.vidaActual /= 2;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
-            System.out.println("Consigues ayudarle a cruzar el lago y sobrevivís los dos. ");
+            System.out.println("Finalmente, tras un esfuerzo que parece interminable, alcanzáis la orilla. Ambos caéis sobre la tierra mojada, \nexhaustos, pero a salvo. Tu Pokémon respira con dificultad, pero sigue consciente y fuera de peligro inmediato.");
 
             cofre();
 
         }else if(DatosHistoria.Pokemon.equalsIgnoreCase("Nidoran")){
 
-            System.out.println("Tu pokemon es de sombra ¡Pierde la mitad de su vida!");
+            System.out.println("Tu Pokémon de veneno salta contigo, sin embargo, en cuanto entra en contacto con el agua, \nsu cuerpo reacciona de forma inesperada. La superficie del lago parece neutralizar \nparte de sus toxinas naturales y su energía disminuye de golpe.");
             DatosHistoria.vidaActual /= 2;
             System.out.println("Tu pokemon ha perdido vida. Vida de " + DatosHistoria.Pokemon + " : " + Metodos.red + DatosHistoria.vidaActual + Metodos.reset);
-            System.out.println("Consigues ayudarle a cruzar el lago y sobrevivís los dos. ");
+            System.out.println("Tras un esfuerzo largo y agotador, conseguís llegar al borde del lago. \nAmbos os desplomáis sobre la hierba húmeda, cansados pero fuera de peligro.");
 
             cofre();
 
         }else if(DatosHistoria.Pokemon.equalsIgnoreCase("Staryu")){
 
-            System.out.println("Tu pokemon tiene afinidad con el agua y te ayuda a cruzar el lago a mayor velocidad ¡Ambos conseguís cruzar con vida!");
+            System.out.println("En cuanto empieza a nadar, notas cómo el agua a tu alrededor se mueve de manera más fluida. Tu \ncompañero se coloca a tu lado y te impulsa con sus movimientos, guiándote hacia la otra orilla y reduciendo \nel esfuerzo del trayecto. Gracias a su ayuda, avanzáis a gran velocidad.");
+
+            Metodos.slowPrintln(Metodos.green + "Tu Pokémon te ayuda a cruzar el lago con facilidad." + Metodos.reset, 40);
 
             cofre();
         }

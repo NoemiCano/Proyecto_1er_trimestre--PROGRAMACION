@@ -26,7 +26,6 @@ public class PoisonRoute {
         int vidas = 3;
         int vidaInicial = DatosHistoria.vidaInicial;
         DatosHistoria.vidaActual = vidaInicial;
-        DatosHistoria.vidaInicial = DatosHistoria.vidaActual;
         int vidaPokemon = DatosHistoria.vidaActual;
         String pokemon = DatosHistoria.Pokemon;
 
